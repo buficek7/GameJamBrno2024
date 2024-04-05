@@ -10,9 +10,7 @@ size = Vector2(20, 50)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
