@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://w3pcrx8fp12j"]
+
+[ext_resource type="Texture2D" uid="uid://c4rhgh534owqm" path="res://Textures/Backgrouds/28bpx2i1hfk61.png" id="1_hogy0"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_vn36g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r24hr"]
+radius = 54.1479
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_vn36g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_r24hr")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_hogy0")
