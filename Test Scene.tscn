@@ -27,10 +27,8 @@ texture = ExtResource("2_u7doe")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hogy0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -39,7 +37,7 @@ position = Vector2(0, 600)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_jbgnv")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(30, 753)
 scale = Vector2(1.842, 1)
 texture = ExtResource("4_wc8fk")
