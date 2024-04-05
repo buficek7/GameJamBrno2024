@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=7 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://c4rhgh534owqm" path="res://Textures/Backgrouds/28bpx2i1hfk61.png" id="1_hogy0"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_vn36g"]
-[ext_resource type="Texture2D" uid="uid://b24hbw45yre1w" path="res://main_char.png" id="2_u7doe"]
+[ext_resource type="Texture2D" path="res://main_char.png" id="2_u7doe"]
+[ext_resource type="Texture2D" uid="uid://dgpsbwb7fdcuy" path="res://Textures/Backgrouds/lava.png" id="4_wc8fk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r24hr"]
 radius = 156.4
@@ -37,3 +38,6 @@ position = Vector2(0, 600)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_jbgnv")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+texture = ExtResource("4_wc8fk")
