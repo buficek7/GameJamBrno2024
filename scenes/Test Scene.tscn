@@ -1,15 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://hdgufxll8hue"]
 
-[ext_resource type="Texture2D" uid="uid://c4rhgh534owqm" path="res://Textures/Backgrouds/28bpx2i1hfk61.png" id="1_hogy0"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_vn36g"]
-[ext_resource type="Texture2D" uid="uid://djhmw3yu232jj" path="res://Textures/Characters/main_char.png" id="2_u7doe"]
-[ext_resource type="Texture2D" uid="uid://dgpsbwb7fdcuy" path="res://Textures/Backgrouds/lava.png" id="4_wc8fk"]
+[ext_resource type="Script" path="res://scripts/CharacterBody2D.gd" id="1_vn36g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r24hr"]
 radius = 156.4
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n34jy"]
+load_path = "res://.godot/imported/main_char.png-9b5edc52c02a1ea4924de31473873156.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4vbq"]
+load_path = "res://.godot/imported/28bpx2i1hfk61.png-923e883cb4b7407b7f9a43aff608379b.ctex"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbgnv"]
 size = Vector2(3000, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e1632"]
+load_path = "res://.godot/imported/lava.png-81a42360e8c8653448489dabe5f53886.ctex"
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,14 +28,14 @@ shape = SubResource("CircleShape2D_r24hr")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_u7doe")
+texture = SubResource("CompressedTexture2D_n34jy")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("1_hogy0")
+texture = SubResource("CompressedTexture2D_u4vbq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 600)
@@ -40,4 +46,4 @@ shape = SubResource("RectangleShape2D_jbgnv")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(30, 753)
 scale = Vector2(1.842, 1)
-texture = ExtResource("4_wc8fk")
+texture = SubResource("CompressedTexture2D_e1632")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgpsbwb7fdcuy"
-path="res://.godot/imported/lava.png-81a42360e8c8653448489dabe5f53886.ctex"
+uid="uid://dxwoqfn8j82mi"
+path="res://.godot/imported/Logo.png-fa1cb8d312a864049b7c4213ae3acad5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Backgrouds/lava.png"
-dest_files=["res://.godot/imported/lava.png-81a42360e8c8653448489dabe5f53886.ctex"]
+source_file="res://art/Logo.png"
+dest_files=["res://.godot/imported/Logo.png-fa1cb8d312a864049b7c4213ae3acad5.ctex"]
 
 [params]
 
