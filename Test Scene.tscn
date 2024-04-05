@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://w3pcrx8fp12j"]
+[gd_scene load_steps=6 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://c4rhgh534owqm" path="res://Textures/Backgrouds/28bpx2i1hfk61.png" id="1_hogy0"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_vn36g"]
+[ext_resource type="Texture2D" uid="uid://b24hbw45yre1w" path="res://main_char.png" id="2_u7doe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r24hr"]
 radius = 54.1479
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kflat"]
+size = Vector2(3000, 20)
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,6 +20,9 @@ shape = SubResource("CircleShape2D_r24hr")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_u7doe")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -24,3 +31,10 @@ motion_scale = Vector2(0.2, 0.2)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hogy0")
+
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(-2, 525)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_kflat")
+one_way_collision_margin = 20.0
