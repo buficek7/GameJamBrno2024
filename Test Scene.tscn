@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b24hbw45yre1w" path="res://main_char.png" id="2_u7doe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r24hr"]
-radius = 54.1479
+radius = 156.4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kflat"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbgnv"]
 size = Vector2(3000, 20)
 
 [node name="Node2D" type="Node2D"]
@@ -32,9 +32,8 @@ motion_scale = Vector2(0.2, 0.2)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_hogy0")
 
-[node name="Floor" type="Area2D" parent="."]
-position = Vector2(-2, 525)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 600)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("RectangleShape2D_kflat")
-one_way_collision_margin = 20.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jbgnv")
