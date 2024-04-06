@@ -87,7 +87,7 @@ height = 249.48
 position = Vector2(2, -1)
 script = ExtResource("1_s5lyr")
 
-[node name="Control" type="Control" parent="."]
+[node name="Book" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -101,7 +101,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("2_wx44w")
 
-[node name="Forward" type="TextureButton" parent="Control"]
+[node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.192
@@ -113,7 +113,7 @@ offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
 
-[node name="Backward" type="TextureButton" parent="Control"]
+[node name="Backward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.192
@@ -125,7 +125,7 @@ offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.202
@@ -215,7 +215,7 @@ shape = SubResource("CapsuleShape2D_glpd3")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
 
-[connection signal="pressed" from="Control/Forward" to="Control" method="_on_forward_pressed"]
-[connection signal="pressed" from="Control/Backward" to="Control" method="_on_backward_pressed"]
+[connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
+[connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
 [connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
 [connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
