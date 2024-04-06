@@ -5,7 +5,7 @@ var defPosition : Vector2
 var IsDraged : bool = false
 var OverDish : bool = false
 @export_category("Base")
-@export var Ingredient_Number : int = 0
+@export var Ingredient_Name : String
 @export var drinkDish : Dish
 @export_category("Movement")
 @export var MoveUp : float = 30
@@ -28,7 +28,7 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("Mouse") and mouse_hover == true:
 		print_debug("added")
-		drinkDish.addIngredient(Ingredient_Number)
+		drinkDish.addIngredient(Ingredient_Name)
 
 func _mouse_enter():
 	mouse_hover = true

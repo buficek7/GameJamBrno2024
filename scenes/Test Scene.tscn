@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=15 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
+[ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Texture2D" uid="uid://dflht6yi7yl3p" path="res://Textures/Objects/fooddish.png" id="3_btmry"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
@@ -37,6 +38,7 @@ anchors_preset = 0
 offset_left = -958.0
 offset_right = -289.0
 offset_bottom = 539.0
+script = ExtResource("2_wx44w")
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
@@ -44,7 +46,7 @@ offset_right = 668.0
 offset_bottom = 540.0
 color = Color(0.643137, 0.709804, 0.482353, 1)
 
-[node name="TextureButton" type="TextureButton" parent="Control"]
+[node name="Forward" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.192
@@ -56,7 +58,7 @@ offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
 
-[node name="TextureButton2" type="TextureButton" parent="Control"]
+[node name="Backward" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.192
@@ -125,3 +127,6 @@ shape = SubResource("CapsuleShape2D_glpd3")
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
+
+[connection signal="pressed" from="Control/Forward" to="Control" method="_on_forward_pressed"]
+[connection signal="pressed" from="Control/Backward" to="Control" method="_on_backward_pressed"]
