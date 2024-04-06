@@ -7,21 +7,13 @@ var ingredients = {} #dictionary of put ingredients
 @export var scaleTexture = Vector2(0.1, 0.1)
 @export var scaleTextureMax = 0.25
 @export var scaleMax = 0.01
+@onready var anim = $AnimationPlayer
 var currentscale = scaleTexture
 var mouse_hover = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if not ingEmpty():
-		texture.scale = currentscale
-	else:
-		texture.scale = scaleTexture
-		currentscale = scaleTexture
-	
 
 func ingEmpty():
 	return len(ingredients.keys()) == 0
@@ -49,10 +41,9 @@ func clearIngredients():
 	ingredients.clear()
 
 func addIngredient(ingredient):
+	anim.play("Ing_Added")
 	print_debug("Added ingridient")
 	print_debug(ingredient)
-	if currentscale.x + scaleMax <= scaleTextureMax and ingredient != "shaken":
-		currentscale = Vector2(currentscale.x + scaleMax, currentscale.y + scaleMax)
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
 
 func dish_ready():
