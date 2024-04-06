@@ -12,6 +12,7 @@ var active_order : Order
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 @export var timerTime = 20
+var playing_anim = false
 var score = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -51,9 +52,11 @@ func next_order():
 		orderTimer.stop_timer()
 		return
 	orderTimer.stop_timer()
+	playing_anim = true
 	await get_tree().create_timer(1).timeout
 	NoteAnim.play("New")
 	await get_tree().create_timer(1).timeout
+	playing_anim = false
 	NoteAnim.play("Pending")
 	active_order = waiting_orders.pop_back()
 	inspect.change_label(self.get_order_descript())

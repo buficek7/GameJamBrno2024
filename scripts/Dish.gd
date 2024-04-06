@@ -19,6 +19,8 @@ func ingEmpty():
 	return len(ingredients.keys()) == 0
 
 func _input(event):
+	if parent.playing_anim:
+		return 
 	if event.is_action_pressed("Inspect"):
 		parent.inspect.change_visibility()
 	if event.is_action_pressed("Serve"):
