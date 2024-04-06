@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=14 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
+[ext_resource type="Script" path="res://scripts/Active Order.gd" id="3_jh7jl"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -28,44 +29,6 @@ height = 249.48
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
 script = ExtResource("1_s5lyr")
-
-[node name="Background" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ColorRect" type="ColorRect" parent="Background"]
-layout_mode = 0
-offset_left = -958.0
-offset_top = 55.0
-offset_right = -290.0
-offset_bottom = 534.0
-color = Color(0.643137, 0.709804, 0.482353, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="Background"]
-layout_mode = 0
-offset_left = -288.0
-offset_top = 55.0
-offset_right = 959.0
-offset_bottom = 534.0
-color = Color(0.482353, 0.168627, 0.0705882, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Background"]
-layout_mode = 0
-offset_left = -958.0
-offset_top = -537.0
-offset_right = 29.0
-offset_bottom = 60.0
-color = Color(0.482353, 0.168627, 0.0705882, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="Background"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = -537.0
-offset_right = 960.0
-offset_bottom = 60.0
-color = Color(0.137255, 0.666667, 0.764706, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -123,6 +86,15 @@ text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor s
 scroll_active = false
 context_menu_enabled = true
 
+[node name="Active Order" type="RichTextLabel" parent="."]
+offset_left = -75.0
+offset_top = 165.0
+offset_right = 182.0
+offset_bottom = 430.0
+bbcode_enabled = true
+text = "Order"
+script = ExtResource("3_jh7jl")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -133,7 +105,7 @@ context_menu_enabled = true
 texture = SubResource("CompressedTexture2D_u4vbq")
 
 [node name="DrinkDish" type="Area2D" parent="."]
-position = Vector2(486, 294)
+position = Vector2(490, 300)
 scale = Vector2(3.11793, 2.15332)
 script = ExtResource("3_droxh")
 

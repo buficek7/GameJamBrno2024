@@ -50,6 +50,7 @@ func get_order():
 	return active_order
 
 func get_order_descript():
+	print(active_order)
 	if active_order == null:
 		return null
 	return active_order.get_desc()
