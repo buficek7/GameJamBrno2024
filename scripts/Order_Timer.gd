@@ -2,7 +2,7 @@ extends Control
 
 @onready var Progress : ProgressBar = $ProgressBar
 @onready var _Timer : Timer = $Timer
-@export var timerTime = 20
+@onready var parent : Node2D = $"../../Node2D"
 var timeLeft = null
 signal  TimeOut
 
@@ -19,9 +19,9 @@ func change_timer():
 
 func start_timer():
 	timeLeft = null
-	Progress.max_value = timerTime
+	Progress.max_value = parent.timerTime
 	_Timer.autostart = false
-	_Timer.start(timerTime)
+	_Timer.start(parent.timerTime)
 
 func stop_timer():
 	_Timer.stop()

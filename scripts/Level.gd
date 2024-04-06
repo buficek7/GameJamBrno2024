@@ -11,12 +11,8 @@ var active_order : Order
 @onready var NoteAnim = $TextureButton/AnimationPlayer
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
+@export var timerTime = 20
 var score = 0
-var orders = [
-	"Cafe-Sucks", 
-	"Suckujes-Cafe",
-	"test-sucks",
-]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,6 +50,7 @@ func next_order():
 		active_order = null
 		orderTimer.stop_timer()
 		return
+	orderTimer.stop_timer()
 	await get_tree().create_timer(1).timeout
 	NoteAnim.play("New")
 	await get_tree().create_timer(1).timeout
