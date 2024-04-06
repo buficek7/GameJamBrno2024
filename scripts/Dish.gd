@@ -19,6 +19,8 @@ func ingEmpty():
 	return len(ingredients.keys()) == 0
 
 func _input(event):
+	if event.is_action_pressed("Inspect"):
+		parent.inspect.change_visibility()
 	if event.is_action_pressed("Serve"):
 		if ingEmpty():
 			return
@@ -65,12 +67,12 @@ func dish_ready():
 	ingredients.clear()
 	print_debug("dish_ready_end")
 	
-func check_recipe(recipe: Dictionary, ingredients: Dictionary):
-	if len(recipe) != len(ingredients):
+func check_recipe(recipe: Dictionary, ingredients_sec: Dictionary):
+	if len(recipe) != len(ingredients_sec):
 		return false
-	for value in ingredients.keys():
+	for value in ingredients_sec.keys():
 		print_debug("check_recipe")
 		var ingredient = recipe.get(value, null)
-		if ingredient == null or ingredients[value] != ingredient:
+		if ingredient == null or ingredients_sec[value] != ingredient:
 			return false
 	return true

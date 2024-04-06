@@ -1,14 +1,27 @@
-[gd_scene load_steps=20 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=40 format=3 uid="uid://hdgufxll8hue"]
 
-[ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
-[ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
-[ext_resource type="Script" path="res://scripts/Active_Order.gd" id="3_jh7jl"]
 [ext_resource type="Script" path="res://scripts/ScoreCount.gd" id="3_tme6e"]
+[ext_resource type="Texture2D" uid="uid://b4vtxexoohcuy" path="res://art/note_special.png" id="5_tsyfh"]
+[ext_resource type="Texture2D" uid="uid://qy0e3e3gf5iy" path="res://art/background.png" id="6_m1xq3"]
+[ext_resource type="Texture2D" uid="uid://dgltlj6l10yh3" path="res://art/shaker.png" id="8_n7exs"]
+[ext_resource type="Script" path="res://scripts/Inscpection.gd" id="10_7w07t"]
+[ext_resource type="Texture2D" uid="uid://btwh6i8p4fw01" path="res://art/cherry.png" id="10_352m3"]
+[ext_resource type="Texture2D" uid="uid://cedkrlaakto4j" path="res://art/herbal.png" id="11_m1vkb"]
+[ext_resource type="Texture2D" uid="uid://ch1mndmlgtfp4" path="res://art/vanilla.png" id="12_b5asy"]
+[ext_resource type="Texture2D" uid="uid://caum3bfctoowk" path="res://art/basil.png" id="13_flgw5"]
+[ext_resource type="Texture2D" uid="uid://b8r0jw4i50byg" path="res://art/tequilla.png" id="14_6d8x1"]
+[ext_resource type="Texture2D" uid="uid://dhr6qm5gab6vo" path="res://art/rum.png" id="15_befe1"]
+[ext_resource type="Texture2D" uid="uid://dj2fqe6d21xas" path="res://art/vodka.png" id="16_l20wa"]
+[ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="17_e4fuw"]
+[ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="18_ccxdd"]
+[ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
+[ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
+[ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -19,10 +32,18 @@ gradient = SubResource("Gradient_msppg")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_aecbn"]
 gradient = SubResource("Gradient_msppg")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4vbq"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sag8t"]
+bg_color = Color(0.654902, 0.541176, 0.835294, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwa18"]
+bg_color = Color(0.454902, 0.215686, 0.709804, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
-size = Vector2(70, 120)
+size = Vector2(70, 152.323)
 
 [sub_resource type="Animation" id="Animation_6bwn5"]
 resource_name = "Ing_Added"
@@ -80,8 +101,31 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glpd3"]
-radius = 57.21
-height = 249.48
+radius = 53.0
+height = 204.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k6t1"]
+radius = 103.0
+height = 212.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27jwi"]
+radius = 52.0
+height = 260.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_id5by"]
+radius = 78.0
+height = 196.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elev6"]
+radius = 74.0
+height = 148.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4digj"]
+radius = 63.0
+height = 306.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
+font_size = 60
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
@@ -92,14 +136,15 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -958.0
+offset_left = 296.0
 offset_top = 55.0
-offset_right = -289.0
+offset_right = 965.0
 offset_bottom = 536.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("2_wx44w")
+metadata/_edit_use_anchors_ = true
 
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
@@ -112,25 +157,28 @@ offset_right = 535.552
 offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Backward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.192
-anchor_bottom = 0.094
+anchor_left = 0.195815
+anchor_right = 0.387815
+anchor_bottom = 0.105335
 offset_left = 3.0
 offset_top = 234.0
 offset_right = -61.448
 offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.202
+anchor_left = 0.344003
 anchor_top = 0.175
-anchor_right = 0.846039
+anchor_right = 0.896861
 anchor_bottom = 0.928
 offset_left = -17.138
 offset_top = -18.175
@@ -142,6 +190,7 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor sit amet purus malesuada congue. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam erat volutpat. Integer malesuada. In dapibus augue non sapien. Integer tempor. Mauris elementum mauris vitae tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce consectetuer risus a nunc. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris metus."
 scroll_active = false
 context_menu_enabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ScoreCount" type="RichTextLabel" parent="."]
 offset_left = 531.0
@@ -151,31 +200,39 @@ offset_bottom = -419.0
 bbcode_enabled = true
 script = ExtResource("3_tme6e")
 
+[node name="Note" type="TextureRect" parent="."]
+offset_left = -292.0
+offset_top = -279.0
+offset_right = 394.0
+offset_bottom = 437.0
+texture = ExtResource("5_tsyfh")
+
 [node name="Order_TImer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 158.0
-offset_bottom = 40.0
+offset_left = -36.0
+offset_top = -80.0
+offset_right = 122.0
+offset_bottom = -40.0
 script = ExtResource("3_8e27k")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
+modulate = Color(0.937255, 0.796078, 0.4, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.057
-anchor_bottom = 0.675
+anchor_left = 0.962025
+anchor_top = 6.4
+anchor_right = 2.01903
+anchor_bottom = 7.075
 offset_right = -0.00601196
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_sag8t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kwa18")
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Order_TImer"]
-
-[node name="Active_Order" type="RichTextLabel" parent="."]
-offset_left = -75.0
-offset_top = 165.0
-offset_right = 182.0
-offset_bottom = 430.0
-bbcode_enabled = true
-text = "Order"
-script = ExtResource("3_jh7jl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -184,38 +241,238 @@ script = ExtResource("3_jh7jl")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture = SubResource("CompressedTexture2D_u4vbq")
+position = Vector2(2.00004, -0.999965)
+scale = Vector2(1.11111, 1.11111)
+texture = ExtResource("6_m1xq3")
 
 [node name="DrinkDish" type="Area2D" parent="."]
-position = Vector2(490, 300)
+position = Vector2(301, 249)
 scale = Vector2(3.11793, 2.15332)
 script = ExtResource("3_droxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
+position = Vector2(0, -4.1796)
 shape = SubResource("RectangleShape2D_hm5ap")
 
 [node name="Sprite2D" type="Sprite2D" parent="DrinkDish"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_x6y8s")
+scale = Vector2(0.33, 0.515)
+texture = ExtResource("8_n7exs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DrinkDish"]
 libraries = {
 "": SubResource("AnimationLibrary_3kmr7")
 }
 
-[node name="water" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
-position = Vector2(-866, -410)
+[node name="cherry" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-760, -426)
 script = ExtResource("1_nhgtr")
 drinkDish = NodePath("../DrinkDish")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="water"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cherry"]
+position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_glpd3")
 
-[node name="Sprite2D" type="Sprite2D" parent="water"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_mfb7t")
+[node name="Sprite2D" type="Sprite2D" parent="cherry"]
+position = Vector2(71, 0)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("10_352m3")
+
+[node name="herbal" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-528, -420)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="herbal"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_glpd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="herbal"]
+position = Vector2(-98, -22)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("11_m1vkb")
+
+[node name="vanilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-280, -416)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vanilla"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_glpd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="vanilla"]
+position = Vector2(-1.99999, -21)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("12_b5asy")
+
+[node name="basil" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-47, -401)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basil"]
+position = Vector2(-9, -16)
+shape = SubResource("CapsuleShape2D_7k6t1")
+
+[node name="Sprite2D" type="Sprite2D" parent="basil"]
+position = Vector2(-1.99999, -21)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("13_flgw5")
+
+[node name="tequilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-672, -134)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tequilla"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="tequilla"]
+position = Vector2(-26, -147)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("14_6d8x1")
+
+[node name="rum" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-399, -128)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rum"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="rum"]
+position = Vector2(-3, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("15_befe1")
+
+[node name="vodka" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-106, -123)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vodka"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="vodka"]
+position = Vector2(-3, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("16_l20wa")
+
+[node name="citrus" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-852, 277)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="citrus"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_id5by")
+
+[node name="Sprite2D" type="Sprite2D" parent="citrus"]
+position = Vector2(-76, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("17_e4fuw")
+
+[node name="berries" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-627, 261)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="berries"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_elev6")
+
+[node name="Sprite2D" type="Sprite2D" parent="berries"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("18_ccxdd")
+
+[node name="lavender" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-378, 146)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lavender"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="lavender"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("19_j3xmy")
+
+[node name="honey" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-258, 147)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="honey"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="honey"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("20_tuyn0")
+
+[node name="shugar" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-141, 146)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shugar"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="shugar"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("21_755hg")
+
+[node name="Inspect" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_7w07t")
+
+[node name="ColorRect" type="ColorRect" parent="Inspect"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.745098)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Inspect"]
+layout_mode = 2
+offset_left = -845.0
+offset_top = -468.0
+offset_right = 835.0
+offset_bottom = 260.0
+bbcode_enabled = true
+
+[node name="TextureButton" type="TextureButton" parent="Inspect"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = 379.0
+offset_right = 160.0
+offset_bottom = 508.0
+
+[node name="Label" type="Label" parent="Inspect/TextureButton"]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 131.0
+text = "Back"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
 [connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
 [connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
+[connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]

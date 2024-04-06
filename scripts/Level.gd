@@ -4,10 +4,10 @@ extends Node2D
 var waiting_orders : Array[Order]
 var active_order : Order
 @onready var endGame = false
-@onready var childOrder = $"Active_Order"
 @onready var drinkDish = $DrinkDish
 @onready var orderTimer = $Order_TImer
 @onready var scoreCount = $ScoreCount
+@onready var inspect = $Inspect
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -20,18 +20,14 @@ var orders = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	active_order = null
+	inspect.visible = false
 	read_level(level)
 	next_order()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func read_level(level: int):
+func read_level(level_int: int):
 	if endGame:
 		return
-	var real_filename = filename % level
+	var real_filename = filename % level_int
 	var data = FileFunctions.json_get_data(real_filename, TYPE_ARRAY)
 	if data == null:
 		return
@@ -51,11 +47,10 @@ func next_order():
 	if len(waiting_orders) == 0:
 		endGame = true
 		active_order = null
-		childOrder.change_text("Lost")
 		orderTimer.stop_timer()
 		return
 	active_order = waiting_orders.pop_back()
-	childOrder.change_text(self.get_order_descript())
+	inspect.change_label(self.get_order_descript())
 	orderTimer.start_timer(10)
 	
 

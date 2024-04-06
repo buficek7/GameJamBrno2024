@@ -7,7 +7,7 @@ signal  TimeOut
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	Progress.value = _Timer.time_left
 
 func start_timer(time):
