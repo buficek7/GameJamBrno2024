@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=8 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
+[ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
+[ext_resource type="Texture2D" uid="uid://dflht6yi7yl3p" path="res://Textures/Objects/fooddish.png" id="3_btmry"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4vbq"]
 load_path = "res://.godot/imported/28bpx2i1hfk61.png-923e883cb4b7407b7f9a43aff608379b.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p702v"]
-size = Vector2(20, 50)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glpd3"]
+radius = 57.21
+height = 249.48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
+size = Vector2(70, 120)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oia0i"]
+radius = 74.15
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,8 +32,28 @@ texture = SubResource("CompressedTexture2D_u4vbq")
 position = Vector2(500, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
-shape = SubResource("RectangleShape2D_p702v")
+shape = SubResource("CapsuleShape2D_glpd3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Ingredient/CollisionShape2D"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
+
+[node name="DrinkDish" type="Area2D" parent="."]
+position = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
+shape = SubResource("RectangleShape2D_hm5ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="DrinkDish/CollisionShape2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_x6y8s")
+
+[node name="FoodDish" type="Area2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodDish"]
+shape = SubResource("CircleShape2D_oia0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="FoodDish/CollisionShape2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_btmry")
