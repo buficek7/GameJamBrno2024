@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=14 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Texture2D" uid="uid://dflht6yi7yl3p" path="res://Textures/Objects/fooddish.png" id="3_btmry"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
@@ -16,7 +17,6 @@ gradient = SubResource("Gradient_msppg")
 gradient = SubResource("Gradient_msppg")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4vbq"]
-load_path = "res://.godot/imported/28bpx2i1hfk61.png-923e883cb4b7407b7f9a43aff608379b.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 120)
@@ -29,6 +29,7 @@ radius = 57.21
 height = 249.48
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_s5lyr")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -113,9 +114,10 @@ shape = SubResource("CircleShape2D_oia0i")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_btmry")
 
-[node name="Ingredient" type="Area2D" parent="."]
+[node name="Ingredient" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(500, 0)
 script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 shape = SubResource("CapsuleShape2D_glpd3")
