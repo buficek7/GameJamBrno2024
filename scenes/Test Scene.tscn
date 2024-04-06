@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=13 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
-[ext_resource type="Texture2D" uid="uid://dflht6yi7yl3p" path="res://Textures/Objects/fooddish.png" id="3_btmry"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
@@ -21,9 +20,6 @@ gradient = SubResource("Gradient_msppg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 120)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_oia0i"]
-radius = 74.15
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glpd3"]
 radius = 57.21
@@ -105,16 +101,6 @@ shape = SubResource("RectangleShape2D_hm5ap")
 [node name="Sprite2D" type="Sprite2D" parent="DrinkDish"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_x6y8s")
-
-[node name="FoodDish" type="Area2D" parent="."]
-position = Vector2(0, 200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodDish"]
-shape = SubResource("CircleShape2D_oia0i")
-
-[node name="Sprite2D" type="Sprite2D" parent="FoodDish"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_btmry")
 
 [node name="water" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(500, 0)
