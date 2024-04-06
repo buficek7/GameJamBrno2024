@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	Progress.value = _Timer.process_callback
+	Progress.value = _Timer.time_left
 
 func start_timer(time):
 	Progress.max_value = time
