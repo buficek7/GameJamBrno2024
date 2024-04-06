@@ -63,13 +63,10 @@ func dish_ready():
 		print_debug(recipe_ing)
 		print_debug(ingredients)
 		print_debug("Lose")
-		if parent.score - 2 < 0:
-			parent.score = 0
-		else:
-			parent.score -= 2
+		parent.change_score(-2)
 	else:
 		print_debug("You did it")
-		parent.score += 1
+		parent.change_score(10)
 	parent.next_order()
 	ingredients.clear()
 	print_debug("dish_ready_end")

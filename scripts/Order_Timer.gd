@@ -12,7 +12,11 @@ func _process(delta):
 
 func start_timer(time):
 	Progress.max_value = time
+	_Timer.autostart = false
 	_Timer.start(time)
+
+func stop_timer():
+	_Timer.stop()
 
 func _on_timer_timeout():
 	TimeOut.emit()

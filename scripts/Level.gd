@@ -7,6 +7,7 @@ var active_order : Order
 @onready var childOrder = $"Active_Order"
 @onready var drinkDish = $DrinkDish
 @onready var orderTimer = $Order_TImer
+@onready var scoreCount = $ScoreCount
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -47,11 +48,21 @@ func read_level(level: int):
 	for string in data:
 		waiting_orders.append(Order.make_order(string))
 
+func change_score(value):
+	if score + value < 0:
+		score = 0
+	else:
+		score += value
+
 func next_order():
+	scoreCount.change_text(score)
 	if endGame:
 		return
 	if len(waiting_orders) == 0:
 		endGame = true
+		active_order = null
+		childOrder.change_text("Lost")
+		orderTimer.stop_timer()
 		return
 	active_order = waiting_orders.pop_back()
 	childOrder.change_text(self.get_order_descript())
@@ -75,6 +86,5 @@ func _on_order_t_imer_time_out():
 	if endGame:
 		return
 	drinkDish.clearIngredients()
-	if score > 0:
-		score -= 1
+	change_score(-1)
 	next_order()

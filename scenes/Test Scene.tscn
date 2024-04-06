@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=16 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 [ext_resource type="Script" path="res://scripts/Active_Order.gd" id="3_jh7jl"]
+[ext_resource type="Script" path="res://scripts/ScoreCount.gd" id="3_tme6e"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -86,6 +87,14 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor sit amet purus malesuada congue. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam erat volutpat. Integer malesuada. In dapibus augue non sapien. Integer tempor. Mauris elementum mauris vitae tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce consectetuer risus a nunc. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris metus."
 scroll_active = false
 context_menu_enabled = true
+
+[node name="ScoreCount" type="RichTextLabel" parent="."]
+offset_left = 531.0
+offset_top = -501.0
+offset_right = 909.0
+offset_bottom = -419.0
+bbcode_enabled = true
+script = ExtResource("3_tme6e")
 
 [node name="Order_TImer" type="Control" parent="."]
 layout_mode = 3
