@@ -51,7 +51,7 @@ func next_order():
 		return
 	active_order = waiting_orders.pop_back()
 	inspect.change_label(self.get_order_descript())
-	orderTimer.start_timer(10)
+	orderTimer.start_timer()
 	
 
 func get_order():

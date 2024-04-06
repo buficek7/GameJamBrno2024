@@ -2,18 +2,26 @@ extends Control
 
 @onready var Progress : ProgressBar = $ProgressBar
 @onready var _Timer : Timer = $Timer
+@export var timerTime = 20
+var timeLeft = null
 signal  TimeOut
-
-func _ready():
-	pass
 
 func _process(_delta):
 	Progress.value = _Timer.time_left
 
-func start_timer(time):
-	Progress.max_value = time
+func change_timer():
+	if _Timer.is_stopped():
+		_Timer.start(timeLeft)
+		timeLeft = null
+	else:
+		timeLeft = _Timer.time_left
+		stop_timer()
+
+func start_timer():
+	timeLeft = null
+	Progress.max_value = timerTime
 	_Timer.autostart = false
-	_Timer.start(time)
+	_Timer.start(timerTime)
 
 func stop_timer():
 	_Timer.stop()
