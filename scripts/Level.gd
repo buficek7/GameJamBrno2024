@@ -9,11 +9,17 @@ var orders = [
 	"Cafe-Sucks", 
 	"Suckujes-Cafe"
 ]
+var recipes = {
+	"dante" : ["tequilla:1", "herbal:1", "liquer:1"]
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	active_order = null
 	FileFunctions.json_make_data(orders, "res://data/levels/level1.json")
+	var recipe_file = "res://data/Recipes/%s.json"
+	for key in recipes.keys():
+		FileFunctions.json_make_data(recipes[key], recipe_file % key)
 	read_level(level)
 	active_order = waiting_orders[0]
 
