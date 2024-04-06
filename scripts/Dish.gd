@@ -4,6 +4,7 @@ class_name Dish
 var ingredients = {} #dictionary of put ingredients
 @onready var texture = $Sprite2D
 @onready var parent = get_node("../../Node2D")
+@onready var quitGame = $"../QuitGame"
 @export var scaleTexture = Vector2(0.1, 0.1)
 @export var scaleTextureMax = 0.25
 @export var scaleMax = 0.01
@@ -19,8 +20,13 @@ func ingEmpty():
 	return len(ingredients.keys()) == 0
 
 func _input(event):
-	if parent.playing_anim or parent.endGame:
-		return 
+	if parent.playing_anim or parent.endGame or quitGame.visible:
+		return
+	if event.is_action_pressed("Quit") and not parent.inspect.visible:
+		parent.orderTimer.change_timer()
+		quitGame.visible = true
+	if event.is_action_pressed("Quit") and parent.inspect.visible:
+		parent.inspect.change_visibility()
 	if event.is_action_pressed("Inspect"):
 		parent.inspect.change_visibility()
 	if event.is_action_pressed("Serve"):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=50 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
 [ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
 [ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
+[ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -691,6 +692,71 @@ label_settings = SubResource("LabelSettings_owrse")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="QuitGame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_86rip")
+
+[node name="ColorRect" type="ColorRect" parent="QuitGame"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="No" type="TextureButton" parent="QuitGame"]
+offset_left = 140.0
+offset_top = 370.0
+offset_right = 540.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="QuitGame/No"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "No"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenu" type="TextureButton" parent="QuitGame"]
+layout_mode = 0
+offset_left = -527.0
+offset_top = 370.0
+offset_right = -127.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="QuitGame/BackToMainMenu"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "Yes"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="QuitGame"]
+layout_mode = 0
+offset_left = -561.0
+offset_top = -265.0
+offset_right = 578.0
+offset_bottom = 236.0
+text = "Are you sure you want  to quit to the main menu?"
+label_settings = SubResource("LabelSettings_owrse")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
 [connection signal="pressed" from="TextureButton" to="Inspect" method="_on_texture_button_pressed"]
@@ -699,3 +765,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]
 [connection signal="pressed" from="EndGame/NextLevel" to="EndGame" method="_on_next_level_pressed"]
 [connection signal="pressed" from="EndGame/BackToMainMenu" to="EndGame" method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="QuitGame/No" to="QuitGame" method="_on_no_pressed"]
+[connection signal="pressed" from="QuitGame/BackToMainMenu" to="EndGame" method="_on_back_to_main_menu_pressed"]
