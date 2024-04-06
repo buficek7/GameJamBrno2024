@@ -1,4 +1,6 @@
 extends CollisionShape2D
+class_name Dish
+
 var ingredients = {} #dictionary of put ingredients
 @onready var texture = $Sprite2D
 @onready var parent = get_node("../../../Node2D")

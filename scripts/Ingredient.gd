@@ -4,7 +4,7 @@ extends Area2D
 var mouse_hover : bool = false
 var defPosition : Vector2
 var IsDraged : bool = false
-@export dringDish : Dish
+@export var dringDish : Dish
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
