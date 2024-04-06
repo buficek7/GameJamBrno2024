@@ -10,7 +10,7 @@ var orders = [
 	"Suckujes-Cafe"
 ]
 var recipes = {
-	"dante" : ["tequilla:1", "herbal:1", "liquer:1"]
+	"dante" : ["tequilla:1", "herbal:1", "liquer:1", "shugar_sirup:1", "basil:1", "shaken:1"]
 }
 
 # Called when the node enters the scene tree for the first time.

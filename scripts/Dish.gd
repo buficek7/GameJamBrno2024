@@ -34,6 +34,7 @@ func addIngredient(ingredient):
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
 
 func dish_ready():
+	return
 	var recipe: Order = parent.get_order() #code to get value of recipe
 	var recipe_ing: Dictionary = Recipes.get_recipe(recipe.get_name())
 	#should check and implement losing function
