@@ -16,4 +16,6 @@ func change_label(new_text: String):
 
 
 func _on_texture_button_pressed():
+	if parent.endGame or parent.playing_anim:
+		return
 	change_visibility()
