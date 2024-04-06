@@ -5,6 +5,7 @@ var defPosition : Vector2
 var IsDraged : bool = false
 var OverDish : bool = false
 @onready var Sprite = $Sprite2D
+@onready var parent = $"../../Node2D"
 @export_category("Base")
 @export var Ingredient_Name : String
 @export var drinkDish : Dish
@@ -21,6 +22,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if parent.playing_anim or parent.endGame:
+		return
 	if mouse_hover == true:
 		self.position.y = lerp(self.position.y, defPosition.y - MoveUp, MoveUpSpeed * delta)
 
@@ -28,6 +31,8 @@ func _process(delta):
 		self.position.y = lerp(self.position.y, defPosition.y, MoveUpSpeed * delta)
 
 func _input(event):
+	if parent.playing_anim or parent.endGame:
+		return
 	if event.is_action_pressed("Mouse") and mouse_hover == true:
 		print_debug("added")
 		drinkDish.addIngredient(Ingredient_Name)

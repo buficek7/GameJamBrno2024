@@ -9,6 +9,7 @@ var active_order : Order
 @onready var scoreCount = $ScoreCount
 @onready var inspect = $Inspect
 @onready var NoteAnim = $TextureButton/AnimationPlayer
+@onready var endGamescreen = $EndGame
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 @export var timerTime = 20
@@ -50,6 +51,8 @@ func next_order():
 		endGame = true
 		active_order = null
 		orderTimer.stop_timer()
+		endGamescreen.visible = true
+		endGamescreen.set_score(score)
 		return
 	orderTimer.stop_timer()
 	playing_anim = true

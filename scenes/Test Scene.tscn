@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=47 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
 [ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
 [ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
+[ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -245,6 +246,9 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_owrse"]
+font_size = 120
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
@@ -604,6 +608,73 @@ offset_right = 321.0
 offset_bottom = 131.0
 text = "Back"
 label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndGame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_u0dfi")
+
+[node name="ColorRect" type="ColorRect" parent="EndGame"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndGame"]
+layout_mode = 2
+offset_left = -845.0
+offset_top = -468.0
+offset_right = 835.0
+offset_bottom = 260.0
+bbcode_enabled = true
+
+[node name="NextLevel" type="TextureButton" parent="EndGame"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 383.0
+offset_right = 556.0
+offset_bottom = 512.0
+
+[node name="Label" type="Label" parent="EndGame/NextLevel"]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 131.0
+text = "Next Level"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenu" type="TextureButton" parent="EndGame"]
+offset_left = -494.0
+offset_top = 375.0
+offset_right = -173.0
+offset_bottom = 504.0
+
+[node name="Label" type="Label" parent="EndGame/BackToMainMenu"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 7.0
+offset_right = 321.0
+offset_bottom = 131.0
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="EndGame"]
+offset_left = -334.0
+offset_top = -78.0
+offset_right = 319.0
+offset_bottom = 87.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_owrse")
 horizontal_alignment = 1
 vertical_alignment = 1
 
