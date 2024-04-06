@@ -201,9 +201,6 @@ texture = SubResource("CompressedTexture2D_u4vbq")
 position = Vector2(490, 300)
 scale = Vector2(3.11793, 2.15332)
 script = ExtResource("3_droxh")
-scaleTexture = null
-scaleTextureMax = null
-scaleMax = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
 shape = SubResource("RectangleShape2D_hm5ap")
@@ -250,6 +247,7 @@ offset_left = -845.0
 offset_top = -468.0
 offset_right = 835.0
 offset_bottom = 260.0
+bbcode_enabled = true
 
 [node name="TextureButton" type="TextureButton" parent="Inspect"]
 layout_mode = 0

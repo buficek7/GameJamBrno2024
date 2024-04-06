@@ -8,6 +8,7 @@ var active_order : Order
 @onready var drinkDish = $DrinkDish
 @onready var orderTimer = $Order_TImer
 @onready var scoreCount = $ScoreCount
+@onready var inspect = $Inspect
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -20,6 +21,7 @@ var orders = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	active_order = null
+	inspect.visible = false
 	read_level(level)
 	next_order()
 
@@ -55,7 +57,7 @@ func next_order():
 		orderTimer.stop_timer()
 		return
 	active_order = waiting_orders.pop_back()
-	childOrder.change_text(self.get_order_descript())
+	inspect.change_label(self.get_order_descript())
 	orderTimer.start_timer(10)
 	
 
