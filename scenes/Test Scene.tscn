@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=15 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
+[ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 [ext_resource type="Script" path="res://scripts/Active_Order.gd" id="3_jh7jl"]
 
@@ -86,6 +87,23 @@ text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor s
 scroll_active = false
 context_menu_enabled = true
 
+[node name="Order_TImer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 158.0
+offset_bottom = 40.0
+script = ExtResource("3_8e27k")
+
+[node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.057
+anchor_bottom = 0.675
+offset_right = -0.00601196
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="Order_TImer"]
+
 [node name="Active_Order" type="RichTextLabel" parent="."]
 offset_left = -75.0
 offset_top = 165.0
@@ -130,3 +148,5 @@ texture = ExtResource("1_mfb7t")
 
 [connection signal="pressed" from="Control/Forward" to="Control" method="_on_forward_pressed"]
 [connection signal="pressed" from="Control/Backward" to="Control" method="_on_backward_pressed"]
+[connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
+[connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
