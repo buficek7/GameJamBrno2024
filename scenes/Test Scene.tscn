@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=49 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -246,6 +246,14 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
 font_size = 60
+
+[sub_resource type="Gradient" id="Gradient_mupdb"]
+colors = PackedColorArray(0.511483, 0.0102434, 1.44392e-07, 1, 1, 0.317744, 0.309832, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iem4f"]
+gradient = SubResource("Gradient_mupdb")
+width = 400
+height = 150
 
 [sub_resource type="LabelSettings" id="LabelSettings_owrse"]
 font_size = 120
@@ -636,39 +644,44 @@ offset_bottom = 260.0
 bbcode_enabled = true
 
 [node name="NextLevel" type="TextureButton" parent="EndGame"]
-layout_mode = 0
-offset_left = 235.0
-offset_top = 383.0
-offset_right = 556.0
-offset_bottom = 512.0
+offset_left = 140.0
+offset_top = 370.0
+offset_right = 540.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
 
 [node name="Label" type="Label" parent="EndGame/NextLevel"]
 layout_mode = 0
-offset_right = 321.0
-offset_bottom = 131.0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
 text = "Next Level"
 label_settings = SubResource("LabelSettings_llw0g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackToMainMenu" type="TextureButton" parent="EndGame"]
-offset_left = -494.0
-offset_top = 375.0
-offset_right = -173.0
-offset_bottom = 504.0
+layout_mode = 0
+offset_left = -527.0
+offset_top = 370.0
+offset_right = -127.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
 
 [node name="Label" type="Label" parent="EndGame/BackToMainMenu"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 7.0
-offset_right = 321.0
-offset_bottom = 131.0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_llw0g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="EndGame"]
+layout_mode = 0
 offset_left = -334.0
 offset_top = -78.0
 offset_right = 319.0
@@ -684,3 +697,5 @@ vertical_alignment = 1
 [connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
 [connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
 [connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="EndGame/NextLevel" to="EndGame" method="_on_next_level_pressed"]
+[connection signal="pressed" from="EndGame/BackToMainMenu" to="EndGame" method="_on_back_to_main_menu_pressed"]
