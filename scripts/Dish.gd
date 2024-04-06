@@ -40,25 +40,32 @@ func _mouse_exit():
 	mouse_hover = false
 
 func addIngredient(ingredient):
+	print_debug("Added ingridient")
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
 
 func dish_ready():
 	var recipe: Order = parent.get_order() #code to get value of recipe
 	var recipe_ing: Dictionary = Recipes.get_recipe(recipe.get_name())
 	#should check and implement losing function
-	if check_recipe(recipe_ing, ingredients):
+	if !check_recipe(recipe_ing, ingredients):
+		print_debug(recipe_ing)
+		print_debug(ingredients)
+		print_debug("Lose")
 		if score - 2 < 0:
 			score = 0
 		else:
 			score -= 2
 	else:
+		print_debug("You did it")
 		score += 1
 	ingredients.clear()
+	print_debug("dish_ready_end")
 	
 func check_recipe(recipe: Dictionary, ingredients: Dictionary):
 	if len(recipe) != len(ingredients):
 		return false
 	for value in ingredients.keys():
+		print_debug("check_recipe")
 		var ingredient = recipe.get(value, null)
 		if ingredient == null or ingredients[value] != ingredient:
 			return false

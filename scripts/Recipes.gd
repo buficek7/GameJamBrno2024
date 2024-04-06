@@ -14,6 +14,7 @@ static func make_dict_entry(string: String, dict: Dictionary):
 	var index = 0
 	while string[index] != ':':
 		ingredient_name += string[index]
+		index += 1
 	var amount = int(string.substr(index+1, len(string) - 1))
 	dict[ingredient_name] = amount
 	return dict

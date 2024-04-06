@@ -6,11 +6,15 @@ var active_order : Order
 @export var filename = "res://data/levels/level%d.json"
 @export var level: int = 1
 var orders = [
+	"test-sucks",
 	"Cafe-Sucks", 
 	"Suckujes-Cafe"
 ]
 var recipes = {
-	"dante" : ["tequilla:1", "herbal:1", "liquer:1", "shugar_sirup:1", "basil:1", "shaken:1"]
+	"dante" : ["tequilla:1", "herbal:1", "liquer:1", "sugar:1", "basil:1", "shaken:1"],
+	"curtain_call" : ["basil:3", "rum:2", "sugar:2", "cherry:1", "shaken:1", "ice:1"],
+	"especial_day" : ["berries:3", "white_rum:4", "vanilla:1", "citrus:2", "ice:1"],
+	"test" : ["water:1"]
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +26,7 @@ func _ready():
 		FileFunctions.json_make_data(recipes[key], recipe_file % key)
 	read_level(level)
 	active_order = waiting_orders[0]
+	print_debug(active_order.get_name())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
