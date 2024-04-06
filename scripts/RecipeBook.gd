@@ -21,7 +21,7 @@ func _on_forward_pressed():
 	TextField.text = content[page]
 
 func _on_backward_pressed():
-	if page > lenght - 1:
+	if page > 0:
 		page -= 1
 	else:
 		page = 8
