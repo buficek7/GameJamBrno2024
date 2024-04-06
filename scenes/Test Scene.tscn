@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
-[ext_resource type="Script" path="res://scripts/Active Order.gd" id="3_jh7jl"]
+[ext_resource type="Script" path="res://scripts/Active_Order.gd" id="3_jh7jl"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -86,7 +86,7 @@ text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor s
 scroll_active = false
 context_menu_enabled = true
 
-[node name="Active Order" type="RichTextLabel" parent="."]
+[node name="Active_Order" type="RichTextLabel" parent="."]
 offset_left = -75.0
 offset_top = 165.0
 offset_right = 182.0
