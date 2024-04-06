@@ -41,7 +41,10 @@ func clearIngredients():
 	ingredients.clear()
 
 func addIngredient(ingredient):
-	anim.play("Ing_Added")
+	if ingredient == "shaken":
+		anim.play("Shake")
+	else:
+		anim.play("Ing_Added")
 	print_debug("Added ingridient")
 	print_debug(ingredient)
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
