@@ -227,6 +227,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
 
 [node name="Inspect" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
