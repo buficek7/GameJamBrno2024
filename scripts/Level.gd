@@ -25,15 +25,10 @@ func _ready():
 	read_level(level)
 	next_order()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func read_level(level: int):
+func read_level(level_int: int):
 	if endGame:
 		return
-	var real_filename = filename % level
+	var real_filename = filename % level_int
 	var data = FileFunctions.json_get_data(real_filename, TYPE_ARRAY)
 	if data == null:
 		return

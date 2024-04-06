@@ -16,6 +16,5 @@ static func json_get_data(filename: String, type):
 	
 static func json_make_data(array, filename):
 	var file = FileAccess.open(filename, FileAccess.WRITE)
-	var json = JSON.new()
-	var json_string = json.stringify(array)
+	var json_string = JSON.stringify(array)
 	file.store_string(json_string)
