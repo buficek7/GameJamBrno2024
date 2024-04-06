@@ -4,6 +4,7 @@ var mouse_hover : bool = false
 var defPosition : Vector2
 var IsDraged : bool = false
 var OverDish : bool = false
+@onready var Sprite = $Sprite2D
 @export_category("Base")
 @export var Ingredient_Name : String
 @export var drinkDish : Dish
@@ -16,6 +17,7 @@ var OverDish : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	defPosition = position	
+	Ingredient_Name = name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

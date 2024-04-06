@@ -116,15 +116,15 @@ shape = SubResource("CircleShape2D_oia0i")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_btmry")
 
-[node name="Ingredient" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+[node name="water" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(500, 0)
 script = ExtResource("1_nhgtr")
 drinkDish = NodePath("../DrinkDish")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water"]
 shape = SubResource("CapsuleShape2D_glpd3")
 
-[node name="Sprite2D" type="Sprite2D" parent="Ingredient"]
+[node name="Sprite2D" type="Sprite2D" parent="water"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
 
