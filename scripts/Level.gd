@@ -8,6 +8,7 @@ var active_order : Order
 @onready var orderTimer = $Order_TImer
 @onready var scoreCount = $ScoreCount
 @onready var inspect = $Inspect
+@onready var NoteAnim = $TextureButton/AnimationPlayer
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -22,7 +23,10 @@ func _ready():
 	active_order = null
 	inspect.visible = false
 	read_level(level)
-	next_order()
+	NoteAnim.play("Pending")
+	active_order = waiting_orders.pop_back()
+	inspect.change_label(self.get_order_descript())
+	orderTimer.start_timer()
 
 func read_level(level_int: int):
 	if endGame:
@@ -44,11 +48,16 @@ func next_order():
 	scoreCount.change_text(score)
 	if endGame:
 		return
+	NoteAnim.play("Done")
 	if len(waiting_orders) == 0:
 		endGame = true
 		active_order = null
 		orderTimer.stop_timer()
 		return
+	await get_tree().create_timer(1).timeout
+	NoteAnim.play("New")
+	await get_tree().create_timer(1).timeout
+	NoteAnim.play("Pending")
 	active_order = waiting_orders.pop_back()
 	inspect.change_label(self.get_order_descript())
 	orderTimer.start_timer()

@@ -32,16 +32,6 @@ gradient = SubResource("Gradient_msppg")
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_aecbn"]
 gradient = SubResource("Gradient_msppg")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sag8t"]
-bg_color = Color(0.654902, 0.541176, 0.835294, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwa18"]
-bg_color = Color(0.454902, 0.215686, 0.709804, 1)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 152.323)
 
@@ -124,6 +114,33 @@ height = 148.0
 radius = 63.0
 height = 306.0
 
+[sub_resource type="Animation" id="Animation_h28nq"]
+resource_name = "Done"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20, 10), Vector2(1049, -360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.974033]
+}
+
 [sub_resource type="Animation" id="Animation_xlw57"]
 resource_name = "New"
 tracks/0/type = "value"
@@ -149,6 +166,24 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.490438, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kqgla"]
+resource_name = "Pending"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585)]
 }
 
 [sub_resource type="Animation" id="Animation_4jx2y"]
@@ -190,49 +225,6 @@ tracks/2/keys = {
 "values": [Vector2(1.585, 1.585)]
 }
 
-[sub_resource type="Animation" id="Animation_h28nq"]
-resource_name = "Done"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-20, 10), Vector2(1049, -360)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, -0.974033]
-}
-
-[sub_resource type="Animation" id="Animation_kqgla"]
-resource_name = "Pending"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qgkvi"]
 _data = {
 "Done": SubResource("Animation_h28nq"),
@@ -240,6 +232,16 @@ _data = {
 "Pending": SubResource("Animation_kqgla"),
 "RESET": SubResource("Animation_4jx2y")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sag8t"]
+bg_color = Color(0.654902, 0.541176, 0.835294, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwa18"]
+bg_color = Color(0.454902, 0.215686, 0.709804, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
 font_size = 60
@@ -316,33 +318,6 @@ offset_right = 909.0
 offset_bottom = -419.0
 bbcode_enabled = true
 script = ExtResource("3_tme6e")
-
-[node name="Order_TImer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -36.0
-offset_top = -80.0
-offset_right = 122.0
-offset_bottom = -40.0
-script = ExtResource("3_8e27k")
-metadata/_edit_use_anchors_ = true
-
-[node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
-modulate = Color(0.937255, 0.796078, 0.4, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.962025
-anchor_top = 6.4
-anchor_right = 2.01903
-anchor_bottom = 7.075
-offset_right = -0.00601196
-rotation = -1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_sag8t")
-theme_override_styles/fill = SubResource("StyleBoxFlat_kwa18")
-show_percentage = false
-metadata/_edit_use_anchors_ = true
-
-[node name="Timer" type="Timer" parent="Order_TImer"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -565,6 +540,33 @@ libraries = {
 "": SubResource("AnimationLibrary_qgkvi")
 }
 
+[node name="Order_TImer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = -80.0
+offset_right = 122.0
+offset_bottom = -40.0
+script = ExtResource("3_8e27k")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
+modulate = Color(0.937255, 0.796078, 0.4, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.962025
+anchor_top = 6.4
+anchor_right = 2.01903
+anchor_bottom = 7.075
+offset_right = -0.00601196
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_sag8t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kwa18")
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Order_TImer"]
+
 [node name="Inspect" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -607,6 +609,7 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
+[connection signal="pressed" from="TextureButton" to="Inspect" method="_on_texture_button_pressed"]
 [connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
 [connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
 [connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]

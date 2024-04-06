@@ -3,9 +3,12 @@ extends Control
 
 @onready var label = $RichTextLabel
 @onready var parent = $"../../Node2D"
+@onready var NoteAnim = $"../TextureButton/AnimationPlayer"
 
 func change_visibility():
 	self.visible = !self.visible
+	NoteAnim.play("RESET")
+	NoteAnim.stop()
 	parent.orderTimer.change_timer()
 
 func change_label(new_text: String):
