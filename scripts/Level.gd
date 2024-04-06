@@ -3,7 +3,7 @@ extends Node2D
 
 var waiting_orders : Array[Order]
 var active_order : Order
-@onready var childOrder = $"Active Order"
+@onready var childOrder = $"Active_Order"
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -49,6 +49,7 @@ func next_order():
 	if len(waiting_orders) == 0:
 		return
 	active_order = waiting_orders.pop_back()
+	print(childOrder)
 	childOrder.change_text(self.get_order_descript())
 
 func get_order():
