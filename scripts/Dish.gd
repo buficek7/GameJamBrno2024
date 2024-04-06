@@ -9,7 +9,6 @@ var ingredients = {} #dictionary of put ingredients
 @export var scaleMax = 0.01
 var currentscale = scaleTexture
 var mouse_hover = false
-var score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -48,6 +47,7 @@ func _mouse_exit():
 
 func addIngredient(ingredient):
 	print_debug("Added ingridient")
+	print_debug(ingredient)
 	if currentscale.x + scaleMax <= scaleTextureMax and ingredient != "shaken":
 		currentscale = Vector2(currentscale.x + scaleMax, currentscale.y + scaleMax)
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
@@ -60,13 +60,14 @@ func dish_ready():
 		print_debug(recipe_ing)
 		print_debug(ingredients)
 		print_debug("Lose")
-		if score - 2 < 0:
-			score = 0
+		if parent.score - 2 < 0:
+			parent.score = 0
 		else:
-			score -= 2
+			parent.score -= 2
 	else:
 		print_debug("You did it")
-		score += 1
+		parent.score += 1
+	parent.next_order()
 	ingredients.clear()
 	print_debug("dish_ready_end")
 	

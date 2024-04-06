@@ -3,12 +3,14 @@ extends Node2D
 
 var waiting_orders : Array[Order]
 var active_order : Order
+@onready var childOrder = $"Active Order"
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
+var score = 0
 var orders = [
-	"test-sucks",
 	"Cafe-Sucks", 
-	"Suckujes-Cafe"
+	"Suckujes-Cafe",
+	"test-sucks",
 ]
 var recipes = {
 	"dante" : ["tequilla:1", "herbal:1", "liquer:1", "sugar:1", "basil:1", "shaken:1"],
@@ -19,13 +21,15 @@ var recipes = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("somehting")
 	active_order = null
 	FileFunctions.json_make_data(orders, "res://data/levels/level1.json")
 	var recipe_file = "res://data/Recipes/%s.json"
 	for key in recipes.keys():
 		FileFunctions.json_make_data(recipes[key], recipe_file % key)
 	read_level(level)
-	active_order = waiting_orders.pop_back()
+	print(len(waiting_orders))
+	next_order()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,6 +49,7 @@ func next_order():
 	if len(waiting_orders) == 0:
 		return
 	active_order = waiting_orders.pop_back()
+	childOrder.change_text(self.get_order_descript())
 
 func get_order():
 	return active_order
