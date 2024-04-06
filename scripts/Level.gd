@@ -4,7 +4,6 @@ extends Node2D
 var waiting_orders : Array[Order]
 var active_order : Order
 @onready var endGame = false
-@onready var childOrder = $"Active_Order"
 @onready var drinkDish = $DrinkDish
 @onready var orderTimer = $Order_TImer
 @onready var scoreCount = $ScoreCount
@@ -48,7 +47,6 @@ func next_order():
 	if len(waiting_orders) == 0:
 		endGame = true
 		active_order = null
-		childOrder.change_text("Lost")
 		orderTimer.stop_timer()
 		return
 	active_order = waiting_orders.pop_back()
