@@ -14,7 +14,12 @@ var recipes = {
 	"dante" : ["tequilla:1", "herbal:1", "liquer:1", "sugar:1", "basil:1", "shaken:1"],
 	"curtain_call" : ["basil:3", "rum:2", "sugar:2", "cherry:1", "shaken:1", "ice:1"],
 	"especial_day" : ["berries:3", "white_rum:4", "vanilla:1", "citrus:2", "ice:1"],
-	"test" : ["water:1"]
+	"Thimisis" : ["white_rum:1", "berries:1", "honey:2", "lavender_sirup:1", "shaken:1"],
+	"Arte de Volar" : ["tequilla:2", "lavener_sirup:1", "shugar_sirup:2", "citrus:1", "ice:1"],
+	"Bird of Paradise" : ["tequila:3", "white_knight:3", "citrus:1", "herbal_liqueur:2"],
+	"Great Gatsby" : ["vodka:1", "lemon:2", "sugar_sirup:2", "basil:1", "shaken:1"],
+	"Bloody Mary" : ["vodka:2", "cherry:2", "citrus:3", "basil:1", "shaken:1"],
+	"Lazarus" : ["vodka:1", "rum:1", "vanilla:1", "berries:1"]
 }
 
 # Called when the node enters the scene tree for the first time.

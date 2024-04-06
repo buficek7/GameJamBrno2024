@@ -26,21 +26,60 @@ radius = 57.21
 height = 249.48
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(2, -1)
 script = ExtResource("1_s5lyr")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -958.0
+offset_top = 55.0
+offset_right = -290.0
+offset_bottom = 534.0
+color = Color(0.643137, 0.709804, 0.482353, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -288.0
+offset_top = 55.0
+offset_right = 959.0
+offset_bottom = 534.0
+color = Color(0.482353, 0.168627, 0.0705882, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = -958.0
+offset_top = -537.0
+offset_right = 29.0
+offset_bottom = 60.0
+color = Color(0.482353, 0.168627, 0.0705882, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -537.0
+offset_right = 960.0
+offset_bottom = 60.0
+color = Color(0.137255, 0.666667, 0.764706, 1)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = -958.0
+offset_top = 55.0
 offset_right = -289.0
-offset_bottom = 539.0
+offset_bottom = 536.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
 script = ExtResource("2_wx44w")
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 668.0
-offset_bottom = 540.0
-color = Color(0.643137, 0.709804, 0.482353, 1)
 
 [node name="Forward" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -69,12 +108,14 @@ texture_pressed = SubResource("GradientTexture2D_aecbn")
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.169
-anchor_top = 0.0593692
+anchor_left = 0.202
+anchor_top = 0.175
 anchor_right = 0.846039
 anchor_bottom = 0.928
-offset_left = -0.0610123
-offset_bottom = -0.192017
+offset_left = -17.138
+offset_top = -18.175
+offset_right = -17.0001
+offset_bottom = -18.368
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
@@ -92,7 +133,8 @@ context_menu_enabled = true
 texture = SubResource("CompressedTexture2D_u4vbq")
 
 [node name="DrinkDish" type="Area2D" parent="."]
-position = Vector2(0, -200)
+position = Vector2(486, 294)
+scale = Vector2(3.11793, 2.15332)
 script = ExtResource("3_droxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
@@ -103,7 +145,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_x6y8s")
 
 [node name="water" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
-position = Vector2(500, 0)
+position = Vector2(-866, -410)
 script = ExtResource("1_nhgtr")
 drinkDish = NodePath("../DrinkDish")
 
