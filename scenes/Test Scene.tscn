@@ -244,10 +244,10 @@ color = Color(0, 0, 0, 0.745098)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Inspect"]
 layout_mode = 2
-offset_left = -845.0
-offset_top = -468.0
-offset_right = 835.0
-offset_bottom = 260.0
+offset_left = -792.0
+offset_top = -430.0
+offset_right = 788.0
+offset_bottom = 241.0
 bbcode_enabled = true
 
 [node name="TextureButton" type="TextureButton" parent="Inspect"]

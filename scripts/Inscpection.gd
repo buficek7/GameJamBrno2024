@@ -7,7 +7,7 @@ func change_visibility():
 	self.visible = !self.visible
 
 func change_label(new_text: String):
-	label.text = "[center][font_size=30]" + new_text + "[/font_size][/center]"
+	label.text = "[font_size=30]" + new_text + "[/font_size]"
 
 
 func _on_texture_button_pressed():
