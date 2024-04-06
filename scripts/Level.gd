@@ -5,6 +5,7 @@ var waiting_orders : Array[Order]
 var active_order : Order
 @onready var childOrder = $"Active_Order"
 @onready var drinkDish = $DrinkDish
+@onready var orderTimer = $Order_TImer
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -48,6 +49,8 @@ func next_order():
 		return
 	active_order = waiting_orders.pop_back()
 	childOrder.change_text(self.get_order_descript())
+	orderTimer.start_timer(10)
+	
 
 func get_order():
 	return active_order
