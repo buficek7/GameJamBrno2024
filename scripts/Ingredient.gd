@@ -26,14 +26,15 @@ func _process(delta):
 		#self.rotation_degrees = lerp(-30, 0, 20 * delta)
 		rotation_degrees = -30
 		position = get_global_mouse_position()
-	else:
+	else: if Input.is_action_just_released("Mouse"):
 		drop()
-		position = lerp(defPosition, self.position, 75 * delta)
 		#self.position = defPosition
 		if rotation_degrees != 0:
 			#self.rotation_degrees = lerp(0, -30, 20 * delta)
 			rotation_degrees = 0
 		IsDraged = false
+	else:
+		position = lerp(defPosition, self.position, 75 * delta)
 
 func _mouse_enter():
 	mouse_hover = true
@@ -42,4 +43,5 @@ func _mouse_exit():
 	mouse_hover = false
 	
 func drop():
-	pass
+	dringDish.addIngredient(Ingredient_Number)
+	print_debug(Ingredient_Number)

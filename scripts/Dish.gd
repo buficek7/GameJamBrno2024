@@ -1,4 +1,4 @@
-extends CollisionShape2D
+extends Area2D
 class_name Dish
 
 var ingredients = {} #dictionary of put ingredients

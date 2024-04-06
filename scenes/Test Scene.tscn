@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=10 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
+[ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Texture2D" uid="uid://dt6lyw07qeeh1" path="res://Textures/Objects/drinkdish.png" id="2_x6y8s"]
 [ext_resource type="Texture2D" uid="uid://dflht6yi7yl3p" path="res://Textures/Objects/fooddish.png" id="3_btmry"]
+[ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u4vbq"]
 load_path = "res://.godot/imported/28bpx2i1hfk61.png-923e883cb4b7407b7f9a43aff608379b.ctex"
@@ -28,8 +30,10 @@ radius = 74.15
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = SubResource("CompressedTexture2D_u4vbq")
 
-[node name="Ingredient" type="Area2D" parent="."]
+[node name="Ingredient" type="Area2D" parent="." node_paths=PackedStringArray("dringDish")]
 position = Vector2(500, 0)
+script = ExtResource("1_nhgtr")
+dringDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ingredient"]
 shape = SubResource("CapsuleShape2D_glpd3")
@@ -40,11 +44,12 @@ texture = ExtResource("1_mfb7t")
 
 [node name="DrinkDish" type="Area2D" parent="."]
 position = Vector2(0, -200)
+script = ExtResource("3_droxh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
 shape = SubResource("RectangleShape2D_hm5ap")
 
-[node name="Sprite2D" type="Sprite2D" parent="DrinkDish/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="DrinkDish"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_x6y8s")
 
@@ -54,6 +59,6 @@ position = Vector2(0, 200)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FoodDish"]
 shape = SubResource("CircleShape2D_oia0i")
 
-[node name="Sprite2D" type="Sprite2D" parent="FoodDish/CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="FoodDish"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_btmry")
