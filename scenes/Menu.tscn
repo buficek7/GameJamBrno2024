@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://daga12myqglgb"]
+
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1vsp1"]
+
+[sub_resource type="Gradient" id="Gradient_xa0b1"]
+colors = PackedColorArray(0.403264, 0.588348, 0.99277, 1, 0.229776, 0.448382, 0.980078, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ov3yr"]
+gradient = SubResource("Gradient_xa0b1")
+width = 619
+height = 149
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsnv0"]
+font_size = 86
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1vsp1")
+
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 117.0
+offset_right = 685.0
+offset_bottom = 267.0
+texture_normal = SubResource("GradientTexture2D_ov3yr")
+
+[node name="Label" type="Label" parent="Start"]
+layout_mode = 0
+offset_right = 621.0
+offset_bottom = 147.0
+text = "Start Game"
+label_settings = SubResource("LabelSettings_vsnv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Autori" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 320.0
+offset_right = 691.0
+offset_bottom = 470.0
+texture_normal = SubResource("GradientTexture2D_ov3yr")
+
+[node name="Label" type="Label" parent="Autori"]
+layout_mode = 0
+offset_right = 621.0
+offset_bottom = 147.0
+text = "Autoři"
+label_settings = SubResource("LabelSettings_vsnv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 524.0
+offset_right = 691.0
+offset_bottom = 674.0
+texture_normal = SubResource("GradientTexture2D_ov3yr")
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 0
+offset_right = 621.0
+offset_bottom = 147.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_vsnv0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Autori" to="." method="_on_autori_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

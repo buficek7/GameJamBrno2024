@@ -100,6 +100,7 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 script = ExtResource("2_wx44w")
+metadata/_edit_use_anchors_ = true
 
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
@@ -112,6 +113,7 @@ offset_right = 535.552
 offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Backward" type="TextureButton" parent="Book"]
 layout_mode = 1
@@ -124,6 +126,7 @@ offset_right = -61.448
 offset_bottom = 247.334
 texture_normal = SubResource("GradientTexture2D_e7yik")
 texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
 layout_mode = 1
@@ -142,6 +145,7 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor sit amet purus malesuada congue. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam erat volutpat. Integer malesuada. In dapibus augue non sapien. Integer tempor. Mauris elementum mauris vitae tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce consectetuer risus a nunc. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris metus."
 scroll_active = false
 context_menu_enabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="ScoreCount" type="RichTextLabel" parent="."]
 offset_left = 531.0
@@ -157,6 +161,7 @@ anchors_preset = 0
 offset_right = 158.0
 offset_bottom = 40.0
 script = ExtResource("3_8e27k")
+metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
 layout_mode = 1
@@ -165,6 +170,7 @@ anchor_right = 1.057
 anchor_bottom = 0.675
 offset_right = -0.00601196
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="Order_TImer"]
 
@@ -176,6 +182,7 @@ offset_bottom = 430.0
 bbcode_enabled = true
 text = "Order"
 script = ExtResource("3_jh7jl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

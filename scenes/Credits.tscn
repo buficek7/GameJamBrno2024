@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj0wak6kqwj5g"]
+
+[ext_resource type="Script" path="res://scripts/Credits.gd" id="1_3257m"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3257m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+bbcode_enabled = true
+text = "[font_size=50]
+[center]
+[b]Autoři[/b]
+Daniel Griger
+Tomáš Votava
+Adéla Jeníková
+
+[b]Mentální podpora[/b]
+Radek Drahonský
+
+
+
+
+[font_size=30]ESC to exit[/font_size]
+[/center]
+[/font_size]"
