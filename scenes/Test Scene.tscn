@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=22 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Texture2D" uid="uid://1qbp1iysd3hf" path="res://Textures/Objects/water.png" id="1_mfb7t"]
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 [ext_resource type="Script" path="res://scripts/Active_Order.gd" id="3_jh7jl"]
 [ext_resource type="Script" path="res://scripts/ScoreCount.gd" id="3_tme6e"]
+[ext_resource type="Script" path="res://scripts/Inscpection.gd" id="10_7w07t"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -82,6 +83,9 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glpd3"]
 radius = 57.21
 height = 249.48
+
+[sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
+font_size = 60
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
@@ -197,6 +201,9 @@ texture = SubResource("CompressedTexture2D_u4vbq")
 position = Vector2(490, 300)
 scale = Vector2(3.11793, 2.15332)
 script = ExtResource("3_droxh")
+scaleTexture = null
+scaleTextureMax = null
+scaleMax = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
 shape = SubResource("RectangleShape2D_hm5ap")
@@ -222,7 +229,46 @@ shape = SubResource("CapsuleShape2D_glpd3")
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_mfb7t")
 
+[node name="Inspect" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_7w07t")
+
+[node name="ColorRect" type="ColorRect" parent="Inspect"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.745098)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Inspect"]
+layout_mode = 2
+offset_left = -845.0
+offset_top = -468.0
+offset_right = 835.0
+offset_bottom = 260.0
+
+[node name="TextureButton" type="TextureButton" parent="Inspect"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = 379.0
+offset_right = 160.0
+offset_bottom = 508.0
+
+[node name="Label" type="Label" parent="Inspect/TextureButton"]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 131.0
+text = "Back"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
 [connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
 [connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
+[connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]
