@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=45 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -124,6 +124,123 @@ height = 148.0
 radius = 63.0
 height = 306.0
 
+[sub_resource type="Animation" id="Animation_xlw57"]
+resource_name = "New"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1183, -508), Vector2(-20, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.490438, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4jx2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.585, 1.585)]
+}
+
+[sub_resource type="Animation" id="Animation_h28nq"]
+resource_name = "Done"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20, 10), Vector2(1049, -360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.974033]
+}
+
+[sub_resource type="Animation" id="Animation_kqgla"]
+resource_name = "Pending"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qgkvi"]
+_data = {
+"Done": SubResource("Animation_h28nq"),
+"New": SubResource("Animation_xlw57"),
+"Pending": SubResource("Animation_kqgla"),
+"RESET": SubResource("Animation_4jx2y")
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
 font_size = 60
 
@@ -199,13 +316,6 @@ offset_right = 909.0
 offset_bottom = -419.0
 bbcode_enabled = true
 script = ExtResource("3_tme6e")
-
-[node name="Note" type="TextureRect" parent="."]
-offset_left = -292.0
-offset_top = -279.0
-offset_right = 394.0
-offset_bottom = 437.0
-texture = ExtResource("5_tsyfh")
 
 [node name="Order_TImer" type="Control" parent="."]
 layout_mode = 3
@@ -430,6 +540,30 @@ shape = SubResource("CapsuleShape2D_4digj")
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("21_755hg")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 117.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.585, 1.585)
+pivot_offset = Vector2(67.4203, 62.6357)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_tsyfh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+libraries = {
+"": SubResource("AnimationLibrary_qgkvi")
+}
 
 [node name="Inspect" type="Control" parent="."]
 visible = false
