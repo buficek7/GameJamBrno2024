@@ -6,7 +6,7 @@ var IsDraged : bool = false
 var OverDish : bool = false
 @onready var Sprite = $Sprite2D
 @export_category("Base")
-var Ingredient_Name : String
+@export var Ingredient_Name : String
 @export var drinkDish : Dish
 @export_category("Movement")
 @export var MoveUp : float = 30

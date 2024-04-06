@@ -5,7 +5,9 @@ var ingredients = {} #dictionary of put ingredients
 @onready var texture = $Sprite2D
 @onready var parent = get_node("../../Node2D")
 @export var scaleTexture = Vector2(0.1, 0.1)
-@export var scaleMax = 0.05
+@export var scaleTextureMax = 0.25
+@export var scaleMax = 0.01
+var currentscale = scaleTexture
 var mouse_hover = false
 var score = 0
 # Called when the node enters the scene tree for the first time.
@@ -16,21 +18,26 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if not ingEmpty():
-		texture.scale = Vector2(scaleTexture.x + scaleMax, scaleTexture.y + scaleMax)
+		texture.scale = currentscale
 	else:
 		texture.scale = scaleTexture
+		currentscale = scaleTexture
 	
 
 func ingEmpty():
 	return len(ingredients.keys()) == 0
 
 func _input(event):
-	if not mouse_hover:
-		return
-	if event is InputEventMouseButton:
+	if event.is_action_pressed("Serve"):
 		if ingEmpty():
 			return
 		dish_ready()
+		return
+	if event.is_action("Shake"):
+		addIngredient("shaken")
+		return
+	if event.is_action("Reset"):
+		ingredients.clear()
 		return
 
 func _mouse_enter():
@@ -41,6 +48,8 @@ func _mouse_exit():
 
 func addIngredient(ingredient):
 	print_debug("Added ingridient")
+	if currentscale.x + scaleMax <= scaleTextureMax and ingredient != "shaken":
+		currentscale = Vector2(currentscale.x + scaleMax, currentscale.y + scaleMax)
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
 
 func dish_ready():
