@@ -2,7 +2,6 @@ class_name FileFunctions
 
 static func json_get_data(filename: String, type):
 	var file = FileAccess.open(filename, FileAccess.READ)
-	print(filename)
 	var jsontext = file.get_as_text()
 	var json = JSON.new()
 	var error = json.parse(jsontext)

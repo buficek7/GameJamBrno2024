@@ -4,6 +4,7 @@ extends Node2D
 var waiting_orders : Array[Order]
 var active_order : Order
 @onready var childOrder = $"Active_Order"
+@onready var drinkDish = $DrinkDish
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 var score = 0
@@ -21,14 +22,12 @@ var recipes = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("somehting")
 	active_order = null
 	FileFunctions.json_make_data(orders, "res://data/levels/level1.json")
 	var recipe_file = "res://data/Recipes/%s.json"
 	for key in recipes.keys():
 		FileFunctions.json_make_data(recipes[key], recipe_file % key)
 	read_level(level)
-	print(len(waiting_orders))
 	next_order()
 
 
@@ -38,7 +37,6 @@ func _process(delta):
 	
 func read_level(level: int):
 	var real_filename = filename % level
-	print_debug(real_filename)
 	var data = FileFunctions.json_get_data(real_filename, TYPE_ARRAY)
 	if data == null:
 		return
@@ -49,7 +47,6 @@ func next_order():
 	if len(waiting_orders) == 0:
 		return
 	active_order = waiting_orders.pop_back()
-	print(childOrder)
 	childOrder.change_text(self.get_order_descript())
 
 func get_order():
@@ -60,3 +57,9 @@ func get_order_descript():
 	if active_order == null:
 		return null
 	return active_order.get_desc()
+
+func _on_order_t_imer_time_out():
+	drinkDish.clearIngredients()
+	if score > 0:
+		score -= 1
+	next_order()

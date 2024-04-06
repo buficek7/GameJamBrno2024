@@ -45,6 +45,9 @@ func _mouse_enter():
 func _mouse_exit():
 	mouse_hover = false
 
+func clearIngredients():
+	ingredients.clear()
+
 func addIngredient(ingredient):
 	print_debug("Added ingridient")
 	print_debug(ingredient)
