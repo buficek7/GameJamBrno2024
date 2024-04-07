@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cq2urnxjratlr" path="res://art/book.png" id="3_7i6x0"]
 [ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
+[ext_resource type="Texture2D" uid="uid://b0sb1mm2pou03" path="res://art/book_button.png" id="4_judit"]
+[ext_resource type="Texture2D" uid="uid://cjord76xge0ip" path="res://art/book_button_press.png" id="5_g02ba"]
 [ext_resource type="Texture2D" uid="uid://b4vtxexoohcuy" path="res://art/note_special.png" id="5_tsyfh"]
 [ext_resource type="Texture2D" uid="uid://qy0e3e3gf5iy" path="res://art/background.png" id="6_m1xq3"]
+[ext_resource type="Texture2D" uid="uid://d24waypxedghc" path="res://art/book_button_hover.png" id="6_ob8q1"]
 [ext_resource type="Texture2D" uid="uid://dgltlj6l10yh3" path="res://art/shaker.png" id="8_n7exs"]
 [ext_resource type="Script" path="res://scripts/Inscpection.gd" id="10_7w07t"]
 [ext_resource type="Texture2D" uid="uid://btwh6i8p4fw01" path="res://art/cherry.png" id="10_352m3"]
@@ -29,15 +32,6 @@
 [ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
 [ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="27_12pwm"]
 [ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="28_xjma1"]
-
-[sub_resource type="Gradient" id="Gradient_msppg"]
-colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_e7yik"]
-gradient = SubResource("Gradient_msppg")
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_aecbn"]
-gradient = SubResource("Gradient_msppg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 152.323)
@@ -412,28 +406,35 @@ texture = ExtResource("3_7i6x0")
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.192
-anchor_bottom = 0.094
+anchor_top = -0.114345
+anchor_right = 0.861656
+anchor_bottom = 0.922383
 offset_left = 600.0
 offset_top = 234.0
 offset_right = 535.552
 offset_bottom = 247.334
-texture_normal = SubResource("GradientTexture2D_e7yik")
-texture_pressed = SubResource("GradientTexture2D_aecbn")
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("4_judit")
+texture_pressed = ExtResource("5_g02ba")
+texture_hover = ExtResource("6_ob8q1")
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Backward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2571
-anchor_right = 0.4491
-anchor_bottom = 0.105335
+anchor_top = -0.114345
+anchor_right = 1.11876
+anchor_bottom = 0.922383
 offset_left = 3.0
 offset_top = 234.0
 offset_right = -61.448
 offset_bottom = 247.334
-texture_normal = SubResource("GradientTexture2D_e7yik")
-texture_pressed = SubResource("GradientTexture2D_aecbn")
+scale = Vector2(0.125, 0.125)
+texture_normal = ExtResource("4_judit")
+texture_pressed = ExtResource("5_g02ba")
+texture_hover = ExtResource("6_ob8q1")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
