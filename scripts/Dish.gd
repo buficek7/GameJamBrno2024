@@ -67,6 +67,19 @@ func addIngredient(ingredient):
 
 func dish_ready():
 	var recipe: Order = parent.get_order() #code to get value of recipe
+	if recipe.get_name() == "tutorial":
+		fail_win.visible = true
+		anim_fail.stop()
+		fail_sprite.visible = false
+		anim_fail.play("Pass")
+		done_drink.change_picture("fail")
+		await get_tree().create_timer(0.3).timeout
+		fail_sprite.visible = true
+		fail_win.visible = false
+		anim_fail.play("RESET")
+		parent.next_order()
+		ingredients.clear()
+		return
 	var recipe_ing: Dictionary = Recipes.get_recipe(recipe.get_name())
 	#should check and implement losing function
 	if !check_recipe(recipe_ing, ingredients):

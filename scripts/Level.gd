@@ -22,7 +22,7 @@ func _ready():
 	inspect.visible = false
 	read_level(level)
 	NoteAnim.play("Pending")
-	waiting_orders = OrderRandomizer.randomize_array(waiting_orders)
+	waiting_orders = OrderRandomizer.randomize_array(waiting_orders, level)
 	active_order = waiting_orders.pop_back()
 	inspect.change_label(self.get_order_descript())
 	orderTimer.start_timer()
