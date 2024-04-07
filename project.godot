@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="GameJam2024"
+config/name="Brno underground barman"
+config/version="GameJamBrno2024"
 run/main_scene="res://scenes/Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://art/icon.svg"
+boot_splash/image="res://art/menu.png"
+config/icon="res://art/icon.png"
 
 [autoload]
 

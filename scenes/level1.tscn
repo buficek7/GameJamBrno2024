@@ -443,6 +443,7 @@ offset_top = -2.824
 offset_right = -4.0
 offset_bottom = 4.0
 texture = ExtResource("3_r8jbk")
+metadata/_edit_use_anchors_ = true
 
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
@@ -966,6 +967,7 @@ pivot_offset = Vector2(67.4203, 62.6357)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("26_w4v8e")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
 libraries = {
