@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="17_e4fuw"]
 [ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="18_ccxdd"]
 [ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
+[ext_resource type="Script" path="res://scripts/IngDesc.gd" id="20_1fjtv"]
 [ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
 [ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
 [ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
 [ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
-[ext_resource type="Texture2D" uid="uid://bd2illvaa1twi" path="res://art/fail.png" id="25_ror2l"]
 [ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
@@ -377,6 +377,24 @@ position = Vector2(71, 0)
 scale = Vector2(0.975, 0.975)
 texture = ExtResource("10_352m3")
 
+[node name="IngDesc" type="ColorRect" parent="cherry"]
+visible = false
+offset_left = -59.0
+offset_top = 76.0
+offset_right = 62.0
+offset_bottom = 116.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="cherry/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="herbal" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-528, -420)
 script = ExtResource("1_nhgtr")
@@ -390,6 +408,24 @@ shape = SubResource("CapsuleShape2D_glpd3")
 position = Vector2(-98, -22)
 scale = Vector2(0.975, 0.975)
 texture = ExtResource("11_m1vkb")
+
+[node name="IngDesc" type="ColorRect" parent="herbal"]
+visible = false
+offset_left = -60.0
+offset_top = 75.0
+offset_right = 61.0
+offset_bottom = 115.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="herbal/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
 
 [node name="vanilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-280, -416)
@@ -405,6 +441,24 @@ position = Vector2(-1.99999, -21)
 scale = Vector2(0.975, 0.975)
 texture = ExtResource("12_b5asy")
 
+[node name="IngDesc" type="ColorRect" parent="vanilla"]
+visible = false
+offset_left = -60.0
+offset_top = 74.0
+offset_right = 61.0
+offset_bottom = 114.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="vanilla/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="basil" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-47, -401)
 script = ExtResource("1_nhgtr")
@@ -418,6 +472,24 @@ shape = SubResource("CapsuleShape2D_7k6t1")
 position = Vector2(-1.99999, -21)
 scale = Vector2(0.975, 0.975)
 texture = ExtResource("13_flgw5")
+
+[node name="IngDesc" type="ColorRect" parent="basil"]
+visible = false
+offset_left = -70.0
+offset_top = 62.0
+offset_right = 51.0
+offset_bottom = 102.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="basil/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
 
 [node name="tequilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-672, -134)
@@ -433,6 +505,24 @@ position = Vector2(-26, -147)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("14_6d8x1")
 
+[node name="IngDesc" type="ColorRect" parent="tequilla"]
+visible = false
+offset_left = -60.0
+offset_top = 85.0
+offset_right = 61.0
+offset_bottom = 125.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="tequilla/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="rum" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-399, -128)
 script = ExtResource("1_nhgtr")
@@ -446,6 +536,24 @@ shape = SubResource("CapsuleShape2D_27jwi")
 position = Vector2(-3, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("15_befe1")
+
+[node name="IngDesc" type="ColorRect" parent="rum"]
+visible = false
+offset_left = -61.0
+offset_top = 84.0
+offset_right = 60.0
+offset_bottom = 124.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="rum/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
 
 [node name="vodka" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-106, -123)
@@ -461,6 +569,24 @@ position = Vector2(-3, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("16_l20wa")
 
+[node name="IngDesc" type="ColorRect" parent="vodka"]
+visible = false
+offset_left = -59.0
+offset_top = 84.0
+offset_right = 62.0
+offset_bottom = 124.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="vodka/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="citrus" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-852, 277)
 script = ExtResource("1_nhgtr")
@@ -474,6 +600,24 @@ shape = SubResource("CapsuleShape2D_id5by")
 position = Vector2(-76, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("17_e4fuw")
+
+[node name="IngDesc" type="ColorRect" parent="citrus"]
+visible = false
+offset_left = -58.0
+offset_top = 66.0
+offset_right = 63.0
+offset_bottom = 106.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="citrus/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
 
 [node name="berries" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-627, 261)
@@ -489,6 +633,24 @@ position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("18_ccxdd")
 
+[node name="IngDesc" type="ColorRect" parent="berries"]
+visible = false
+offset_left = -47.0
+offset_top = 40.0
+offset_right = 74.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="berries/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="lavender" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-378, 146)
 script = ExtResource("1_nhgtr")
@@ -502,6 +664,24 @@ shape = SubResource("CapsuleShape2D_4digj")
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("19_j3xmy")
+
+[node name="IngDesc" type="ColorRect" parent="lavender"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="lavender/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
 
 [node name="honey" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-258, 147)
@@ -517,6 +697,24 @@ position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("20_tuyn0")
 
+[node name="IngDesc" type="ColorRect" parent="honey"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="honey/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="shugar" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-141, 146)
 script = ExtResource("1_nhgtr")
@@ -531,10 +729,27 @@ position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("21_755hg")
 
+[node name="IngDesc" type="ColorRect" parent="shugar"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="shugar/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="DoneDrink" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-198, 182)
-texture = ExtResource("25_ror2l")
 script = ExtResource("26_xk06i")
 
 [node name="TextureButton" type="TextureButton" parent="."]
