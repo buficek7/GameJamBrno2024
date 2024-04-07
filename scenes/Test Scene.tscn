@@ -1,8 +1,9 @@
-[gd_scene load_steps=58 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=59 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
+[ext_resource type="Texture2D" uid="uid://cq2urnxjratlr" path="res://art/book.png" id="3_7i6x0"]
 [ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
 [ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
 [ext_resource type="Script" path="res://scripts/ScoreCount.gd" id="3_tme6e"]
@@ -350,6 +351,19 @@ size_flags_vertical = 0
 script = ExtResource("2_wx44w")
 metadata/_edit_use_anchors_ = true
 
+[node name="TextureRect" type="TextureRect" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.262
+anchor_top = -0.096
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.278015
+offset_top = -2.824
+offset_right = -4.0
+offset_bottom = 4.0
+texture = ExtResource("3_7i6x0")
+
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
@@ -366,8 +380,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Backward" type="TextureButton" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.195815
-anchor_right = 0.387815
+anchor_left = 0.2571
+anchor_right = 0.4491
 anchor_bottom = 0.105335
 offset_left = 3.0
 offset_top = 234.0
@@ -380,16 +394,17 @@ metadata/_edit_use_anchors_ = true
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.344003
-anchor_top = 0.175
-anchor_right = 0.896861
-anchor_bottom = 0.928
+anchor_left = 0.382867
+anchor_top = 0.00452183
+anchor_right = 0.922272
+anchor_bottom = 1.01532
 offset_left = -17.138
 offset_top = -18.175
 offset_right = -17.0001
 offset_bottom = -18.368
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor sit amet purus malesuada congue. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam erat volutpat. Integer malesuada. In dapibus augue non sapien. Integer tempor. Mauris elementum mauris vitae tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce consectetuer risus a nunc. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris metus."
 scroll_active = false
@@ -1053,15 +1068,14 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="PassFailIndicator" type="Node2D" parent="."]
+visible = false
 
 [node name="fail" type="Sprite2D" parent="PassFailIndicator"]
-visible = false
 position = Vector2(-3.8147e-05, 2.86102e-06)
 scale = Vector2(3, 2.7)
 texture = ExtResource("27_12pwm")
 
 [node name="pass" type="Sprite2D" parent="PassFailIndicator"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3.8147e-05, 2.86102e-06)
 scale = Vector2(3, 2.7)
