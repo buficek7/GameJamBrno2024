@@ -42,6 +42,7 @@ offset_bottom = 1121.0
 color = Color(0, 0, 0, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2"]
+layout_mode = 0
 offset_left = 59.0
 offset_top = 826.0
 offset_right = 1966.0
