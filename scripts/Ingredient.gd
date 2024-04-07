@@ -32,7 +32,7 @@ func _process(delta):
 		self.position.y = lerp(self.position.y, defPosition.y, MoveUpSpeed * delta)
 
 func _input(event):
-	if parent.playing_anim or parent.endGame:
+	if parent.playing_anim or parent.endGame or parent.inspect.visible:
 		return
 	if event.is_action_pressed("Mouse") and mouse_hover == true:
 		print_debug("added")

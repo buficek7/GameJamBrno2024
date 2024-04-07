@@ -42,7 +42,7 @@ func _input(event):
 			return
 		dish_ready()
 		return
-	if event.is_action_pressed("Shake"):
+	if event.is_action_pressed("Shake") and not parent.inspect.visible:
 		addIngredient("shaken")
 		return
 	if event.is_action_pressed("Reset"):
