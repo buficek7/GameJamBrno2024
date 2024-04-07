@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=61 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dhr6qm5gab6vo" path="res://art/rum.png" id="15_befe1"]
 [ext_resource type="Texture2D" uid="uid://dj2fqe6d21xas" path="res://art/vodka.png" id="16_l20wa"]
 [ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="17_e4fuw"]
+[ext_resource type="Texture2D" uid="uid://bgogmi77ky082" path="res://art/ice.png" id="17_tjfr1"]
 [ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="18_ccxdd"]
 [ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
 [ext_resource type="Script" path="res://scripts/IngDesc.gd" id="20_1fjtv"]
@@ -108,6 +109,10 @@ height = 212.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27jwi"]
 radius = 52.0
 height = 260.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kq1rc"]
+radius = 63.0
+height = 168.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_id5by"]
 radius = 78.0
@@ -281,6 +286,23 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_wuup3"]
+resource_name = "Pass"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../pass:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_8cqvw"]
 length = 0.001
 tracks/0/type = "value"
@@ -306,23 +328,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_wuup3"]
-resource_name = "Pass"
-length = 0.3
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../pass:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_15e6p"]
@@ -672,6 +677,38 @@ offset_bottom = 31.0
 text = "Shugar"
 horizontal_alignment = 1
 
+[node name="ice" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-749, 196)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice"]
+position = Vector2(14, -36)
+shape = SubResource("CapsuleShape2D_kq1rc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ice"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("17_tjfr1")
+
+[node name="IngDesc" type="ColorRect" parent="ice"]
+visible = false
+offset_left = -48.0
+offset_top = 53.0
+offset_right = 73.0
+offset_bottom = 93.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="ice/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
 [node name="citrus" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-852, 277)
 script = ExtResource("1_nhgtr")
@@ -902,7 +939,7 @@ offset_left = -1181.0
 offset_top = -700.0
 offset_right = 1142.0
 offset_bottom = 685.0
-color = Color(0, 0, 0, 0.745098)
+color = Color(0.647059, 0.533333, 0.831373, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Inspect"]
 layout_mode = 2

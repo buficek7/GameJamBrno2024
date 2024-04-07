@@ -12,6 +12,8 @@ var ingredients = {} #dictionary of put ingredients
 @onready var done_drink : DoneDrink = $"../DoneDrink"
 @onready var anim_fail = $"../PassFailIndicator/AnimationPlayer"
 @onready var fail_win = $"../PassFailIndicator"
+@onready var fail_sprite = $"../PassFailIndicator/fail"
+@onready var win_sprite = $"../PassFailIndicator/pass"
 var currentscale = scaleTexture
 var mouse_hover = false
 # Called when the node enters the scene tree for the first time.
@@ -69,14 +71,18 @@ func dish_ready():
 	#should check and implement losing function
 	if !check_recipe(recipe_ing, ingredients):
 		fail_win.visible = true
+		win_sprite.visible = false
 		anim_fail.play("Fail")
 		done_drink.change_picture("fail")
 		parent.change_score(-10)
 		await get_tree().create_timer(0.3).timeout
+		win_sprite.visible = true
 		fail_win.visible = false
 		
 	else:
 		fail_win.visible = true
+		anim_fail.stop()
+		fail_sprite.visible = false
 		anim_fail.play("Pass")
 		done_drink.change_picture(recipe.get_name())
 		var bonus = parent.orderTimer.get_time_left()
@@ -86,14 +92,16 @@ func dish_ready():
 		print(10 + bonus)
 		parent.change_score(10 + bonus)
 		await get_tree().create_timer(0.3).timeout
+		fail_sprite.visible = true
 		fail_win.visible = false
+	anim_fail.play("RESET")
 	parent.next_order()
 	ingredients.clear()
 	
 func check_recipe(recipe: Dictionary, ingredients_sec: Dictionary):
 	if len(recipe) != len(ingredients_sec):
 		return false
-	for value in ingredients_sec.keys():
+	for value in recipe.keys():
 		var ingredient = ingredients_sec.get(value, null)
 		if ingredient == null or recipe[value] != ingredient:
 			return false
