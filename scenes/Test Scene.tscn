@@ -1,0 +1,1168 @@
+[gd_scene load_steps=61 format=3 uid="uid://c58mnllm04cmb"]
+
+[ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
+[ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
+[ext_resource type="Texture2D" uid="uid://cq2urnxjratlr" path="res://art/book.png" id="3_7i6x0"]
+[ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
+[ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
+[ext_resource type="Texture2D" uid="uid://b4vtxexoohcuy" path="res://art/note_special.png" id="5_tsyfh"]
+[ext_resource type="Texture2D" uid="uid://qy0e3e3gf5iy" path="res://art/background.png" id="6_m1xq3"]
+[ext_resource type="Texture2D" uid="uid://dgltlj6l10yh3" path="res://art/shaker.png" id="8_n7exs"]
+[ext_resource type="Script" path="res://scripts/Inscpection.gd" id="10_7w07t"]
+[ext_resource type="Texture2D" uid="uid://btwh6i8p4fw01" path="res://art/cherry.png" id="10_352m3"]
+[ext_resource type="Texture2D" uid="uid://cedkrlaakto4j" path="res://art/herbal.png" id="11_m1vkb"]
+[ext_resource type="Texture2D" uid="uid://ch1mndmlgtfp4" path="res://art/vanilla.png" id="12_b5asy"]
+[ext_resource type="Texture2D" uid="uid://caum3bfctoowk" path="res://art/basil.png" id="13_flgw5"]
+[ext_resource type="Texture2D" uid="uid://b8r0jw4i50byg" path="res://art/tequilla.png" id="14_6d8x1"]
+[ext_resource type="Texture2D" uid="uid://dhr6qm5gab6vo" path="res://art/rum.png" id="15_befe1"]
+[ext_resource type="Texture2D" uid="uid://dj2fqe6d21xas" path="res://art/vodka.png" id="16_l20wa"]
+[ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="17_e4fuw"]
+[ext_resource type="Texture2D" uid="uid://bgogmi77ky082" path="res://art/ice.png" id="17_tjfr1"]
+[ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="18_ccxdd"]
+[ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
+[ext_resource type="Script" path="res://scripts/IngDesc.gd" id="20_1fjtv"]
+[ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
+[ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
+[ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
+[ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
+[ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
+[ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="27_12pwm"]
+[ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="28_xjma1"]
+
+[sub_resource type="Gradient" id="Gradient_msppg"]
+colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e7yik"]
+gradient = SubResource("Gradient_msppg")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aecbn"]
+gradient = SubResource("Gradient_msppg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
+size = Vector2(70, 152.323)
+
+[sub_resource type="Animation" id="Animation_6bwn5"]
+resource_name = "Ing_Added"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.13, 0.27, 0.29, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.466851, -0.466851, 0.515708, 0.515708, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fi6sl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(301, 249)]
+}
+
+[sub_resource type="Animation" id="Animation_wldfk"]
+resource_name = "Reset"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.55, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(301, 249), Vector2(-100, 743), Vector2(-100, 743), Vector2(301, 249)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.55, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.765849, 0.765849, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oasts"]
+resource_name = "Shake"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11, 0.13, 0.27, 0.29, 0.4, 0.6, 0.71, 0.73, 0.87, 0.89, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.466851, -0.466851, 0.515708, 0.515708, 0.0, 0.0, -0.466851, -0.466851, 0.515708, 0.515708, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kmr7"]
+_data = {
+"Ing_Added": SubResource("Animation_6bwn5"),
+"RESET": SubResource("Animation_fi6sl"),
+"Reset": SubResource("Animation_wldfk"),
+"Shake": SubResource("Animation_oasts")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glpd3"]
+radius = 53.0
+height = 204.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7k6t1"]
+radius = 103.0
+height = 212.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27jwi"]
+radius = 52.0
+height = 260.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kq1rc"]
+radius = 63.0
+height = 168.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_id5by"]
+radius = 78.0
+height = 196.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elev6"]
+radius = 74.0
+height = 148.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4digj"]
+radius = 63.0
+height = 306.0
+
+[sub_resource type="Animation" id="Animation_h28nq"]
+resource_name = "Done"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20, 10), Vector2(1049, -360)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.974033]
+}
+
+[sub_resource type="Animation" id="Animation_xlw57"]
+resource_name = "New"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1183, -508), Vector2(-20, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.490438, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kqgla"]
+resource_name = "Pending"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.585, 1.585), Vector2(1.76, 1.76), Vector2(1.585, 1.585)]
+}
+
+[sub_resource type="Animation" id="Animation_4jx2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20, 10)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.585, 1.585)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qgkvi"]
+_data = {
+"Done": SubResource("Animation_h28nq"),
+"New": SubResource("Animation_xlw57"),
+"Pending": SubResource("Animation_kqgla"),
+"RESET": SubResource("Animation_4jx2y")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sag8t"]
+bg_color = Color(0.654902, 0.541176, 0.835294, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kwa18"]
+bg_color = Color(0.454902, 0.215686, 0.709804, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_llw0g"]
+font_size = 60
+
+[sub_resource type="Gradient" id="Gradient_mupdb"]
+colors = PackedColorArray(0.511483, 0.0102434, 1.44392e-07, 1, 1, 0.317744, 0.309832, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iem4f"]
+gradient = SubResource("Gradient_mupdb")
+width = 400
+height = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_owrse"]
+font_size = 120
+
+[sub_resource type="Animation" id="Animation_cxie2"]
+resource_name = "Fail"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wuup3"]
+resource_name = "Pass"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../pass:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8cqvw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../pass:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15e6p"]
+_data = {
+"Fail": SubResource("Animation_cxie2"),
+"Pass": SubResource("Animation_wuup3"),
+"RESET": SubResource("Animation_8cqvw")
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(2, -1)
+script = ExtResource("1_s5lyr")
+
+[node name="Book" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 296.0
+offset_top = 55.0
+offset_right = 965.0
+offset_bottom = 536.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("2_wx44w")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.262
+anchor_top = -0.096
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.278015
+offset_top = -2.824
+offset_right = -4.0
+offset_bottom = 4.0
+texture = ExtResource("3_7i6x0")
+
+[node name="Forward" type="TextureButton" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.192
+anchor_bottom = 0.094
+offset_left = 600.0
+offset_top = 234.0
+offset_right = 535.552
+offset_bottom = 247.334
+texture_normal = SubResource("GradientTexture2D_e7yik")
+texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Backward" type="TextureButton" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2571
+anchor_right = 0.4491
+anchor_bottom = 0.105335
+offset_left = 3.0
+offset_top = 234.0
+offset_right = -61.448
+offset_bottom = 247.334
+texture_normal = SubResource("GradientTexture2D_e7yik")
+texture_pressed = SubResource("GradientTexture2D_aecbn")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Book"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.382867
+anchor_top = -0.130613
+anchor_right = 0.922272
+anchor_bottom = 1.01532
+offset_left = -17.138
+offset_top = -18.175
+offset_right = -17.0001
+offset_bottom = -18.368
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed ac dolor sit amet purus malesuada congue. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam erat volutpat. Integer malesuada. In dapibus augue non sapien. Integer tempor. Mauris elementum mauris vitae tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce consectetuer risus a nunc. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris metus."
+scroll_active = false
+context_menu_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2.00004, -0.999965)
+scale = Vector2(1.11111, 1.11111)
+texture = ExtResource("6_m1xq3")
+
+[node name="DrinkDish" type="Area2D" parent="."]
+position = Vector2(301, 249)
+scale = Vector2(3.11793, 2.15332)
+script = ExtResource("3_droxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
+position = Vector2(0, -4.1796)
+shape = SubResource("RectangleShape2D_hm5ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="DrinkDish"]
+scale = Vector2(0.33, 0.515)
+texture = ExtResource("8_n7exs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DrinkDish"]
+libraries = {
+"": SubResource("AnimationLibrary_3kmr7")
+}
+
+[node name="cherry" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-760, -426)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cherry"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_glpd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="cherry"]
+position = Vector2(71, 0)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("10_352m3")
+
+[node name="IngDesc" type="ColorRect" parent="cherry"]
+visible = false
+offset_left = -59.0
+offset_top = 76.0
+offset_right = 62.0
+offset_bottom = 116.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="cherry/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="herbal" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-528, -420)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="herbal"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_glpd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="herbal"]
+position = Vector2(-98, -22)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("11_m1vkb")
+
+[node name="IngDesc" type="ColorRect" parent="herbal"]
+visible = false
+offset_left = -60.0
+offset_top = 75.0
+offset_right = 61.0
+offset_bottom = 115.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="herbal/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="vanilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-280, -416)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vanilla"]
+position = Vector2(0, -17)
+shape = SubResource("CapsuleShape2D_glpd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="vanilla"]
+position = Vector2(-1.99999, -21)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("12_b5asy")
+
+[node name="IngDesc" type="ColorRect" parent="vanilla"]
+visible = false
+offset_left = -60.0
+offset_top = 74.0
+offset_right = 61.0
+offset_bottom = 114.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="vanilla/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="basil" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-47, -401)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="basil"]
+position = Vector2(-9, -16)
+shape = SubResource("CapsuleShape2D_7k6t1")
+
+[node name="Sprite2D" type="Sprite2D" parent="basil"]
+position = Vector2(-1.99999, -21)
+scale = Vector2(0.975, 0.975)
+texture = ExtResource("13_flgw5")
+
+[node name="IngDesc" type="ColorRect" parent="basil"]
+visible = false
+offset_left = -70.0
+offset_top = 62.0
+offset_right = 51.0
+offset_bottom = 102.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="basil/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="tequilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-672, -134)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tequilla"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="tequilla"]
+position = Vector2(-26, -147)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("14_6d8x1")
+
+[node name="IngDesc" type="ColorRect" parent="tequilla"]
+visible = false
+offset_left = -60.0
+offset_top = 85.0
+offset_right = 61.0
+offset_bottom = 125.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="tequilla/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="rum" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-399, -128)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rum"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="rum"]
+position = Vector2(-3, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("15_befe1")
+
+[node name="IngDesc" type="ColorRect" parent="rum"]
+visible = false
+offset_left = -61.0
+offset_top = 84.0
+offset_right = 60.0
+offset_bottom = 124.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="rum/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="vodka" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-106, -123)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vodka"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_27jwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="vodka"]
+position = Vector2(-3, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("16_l20wa")
+
+[node name="IngDesc" type="ColorRect" parent="vodka"]
+visible = false
+offset_left = -59.0
+offset_top = 84.0
+offset_right = 62.0
+offset_bottom = 124.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="vodka/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="ice" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-749, 196)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ice"]
+position = Vector2(14, -36)
+shape = SubResource("CapsuleShape2D_kq1rc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ice"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("17_tjfr1")
+
+[node name="IngDesc" type="ColorRect" parent="ice"]
+visible = false
+offset_left = -48.0
+offset_top = 53.0
+offset_right = 73.0
+offset_bottom = 93.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="ice/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="citrus" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-852, 277)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="citrus"]
+position = Vector2(0, -38)
+shape = SubResource("CapsuleShape2D_id5by")
+
+[node name="Sprite2D" type="Sprite2D" parent="citrus"]
+position = Vector2(-76, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("17_e4fuw")
+
+[node name="IngDesc" type="ColorRect" parent="citrus"]
+visible = false
+offset_left = -58.0
+offset_top = 66.0
+offset_right = 63.0
+offset_bottom = 106.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="citrus/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="berries" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-627, 261)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="berries"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_elev6")
+
+[node name="Sprite2D" type="Sprite2D" parent="berries"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("18_ccxdd")
+
+[node name="IngDesc" type="ColorRect" parent="berries"]
+visible = false
+offset_left = -47.0
+offset_top = 40.0
+offset_right = 74.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="berries/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="lavender" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-378, 146)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lavender"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="lavender"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("19_j3xmy")
+
+[node name="IngDesc" type="ColorRect" parent="lavender"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="lavender/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="honey" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-258, 147)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="honey"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="honey"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("20_tuyn0")
+
+[node name="IngDesc" type="ColorRect" parent="honey"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="honey/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="shugar" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
+position = Vector2(-141, 146)
+script = ExtResource("1_nhgtr")
+drinkDish = NodePath("../DrinkDish")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shugar"]
+position = Vector2(16, -42)
+shape = SubResource("CapsuleShape2D_4digj")
+
+[node name="Sprite2D" type="Sprite2D" parent="shugar"]
+position = Vector2(14, -43)
+scale = Vector2(0.997778, 1.06444)
+texture = ExtResource("21_755hg")
+
+[node name="IngDesc" type="ColorRect" parent="shugar"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("20_1fjtv")
+
+[node name="Label" type="Label" parent="shugar/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="DoneDrink" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-198, 182)
+script = ExtResource("26_xk06i")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 117.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.585, 1.585)
+pivot_offset = Vector2(67.4203, 62.6357)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_tsyfh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
+libraries = {
+"": SubResource("AnimationLibrary_qgkvi")
+}
+
+[node name="Order_TImer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = -80.0
+offset_right = 122.0
+offset_bottom = -40.0
+script = ExtResource("3_8e27k")
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
+modulate = Color(0.937255, 0.796078, 0.4, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.962025
+anchor_top = 6.4
+anchor_right = 2.01903
+anchor_bottom = 7.075
+offset_right = -0.00601196
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_sag8t")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kwa18")
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Order_TImer"]
+
+[node name="Inspect" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_7w07t")
+
+[node name="ColorRect" type="ColorRect" parent="Inspect"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0.647059, 0.533333, 0.831373, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Inspect"]
+layout_mode = 2
+offset_left = -845.0
+offset_top = -468.0
+offset_right = 835.0
+offset_bottom = 260.0
+bbcode_enabled = true
+
+[node name="TextureButton" type="TextureButton" parent="Inspect"]
+layout_mode = 0
+offset_left = -161.0
+offset_top = 379.0
+offset_right = 160.0
+offset_bottom = 508.0
+
+[node name="Label" type="Label" parent="Inspect/TextureButton"]
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 131.0
+text = "Back"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EndGame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_u0dfi")
+
+[node name="ColorRect" type="ColorRect" parent="EndGame"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndGame"]
+layout_mode = 2
+offset_left = -845.0
+offset_top = -468.0
+offset_right = 835.0
+offset_bottom = 260.0
+bbcode_enabled = true
+
+[node name="NextLevel" type="TextureButton" parent="EndGame"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 370.0
+offset_right = 540.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="EndGame/NextLevel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "Next Level"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenu" type="TextureButton" parent="EndGame"]
+layout_mode = 0
+offset_left = -527.0
+offset_top = 370.0
+offset_right = -127.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="EndGame/BackToMainMenu"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "Main Menu"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="EndGame"]
+layout_mode = 0
+offset_left = -334.0
+offset_top = -78.0
+offset_right = 319.0
+offset_bottom = 87.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_owrse")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitGame" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("24_86rip")
+
+[node name="ColorRect" type="ColorRect" parent="QuitGame"]
+layout_mode = 2
+offset_left = -1181.0
+offset_top = -700.0
+offset_right = 1142.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="No" type="TextureButton" parent="QuitGame"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 370.0
+offset_right = 540.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="QuitGame/No"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "No"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackToMainMenu" type="TextureButton" parent="QuitGame"]
+layout_mode = 0
+offset_left = -527.0
+offset_top = 370.0
+offset_right = -127.0
+offset_bottom = 520.0
+texture_normal = SubResource("GradientTexture2D_iem4f")
+
+[node name="Label" type="Label" parent="QuitGame/BackToMainMenu"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 9.0
+offset_right = 363.0
+offset_bottom = 133.0
+text = "Yes"
+label_settings = SubResource("LabelSettings_llw0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="QuitGame"]
+layout_mode = 0
+offset_left = -561.0
+offset_top = -265.0
+offset_right = 578.0
+offset_bottom = 236.0
+text = "Are you sure you want  to quit to the main menu?"
+label_settings = SubResource("LabelSettings_owrse")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PassFailIndicator" type="Node2D" parent="."]
+visible = false
+
+[node name="fail" type="Sprite2D" parent="PassFailIndicator"]
+position = Vector2(-3.8147e-05, 2.86102e-06)
+scale = Vector2(3, 2.7)
+texture = ExtResource("27_12pwm")
+
+[node name="pass" type="Sprite2D" parent="PassFailIndicator"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-3.8147e-05, 2.86102e-06)
+scale = Vector2(3, 2.7)
+texture = ExtResource("28_xjma1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PassFailIndicator"]
+root_node = NodePath("../fail")
+libraries = {
+"": SubResource("AnimationLibrary_15e6p")
+}
+
+[connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
+[connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
+[connection signal="pressed" from="TextureButton" to="Inspect" method="_on_texture_button_pressed"]
+[connection signal="TimeOut" from="Order_TImer" to="." method="_on_order_t_imer_time_out"]
+[connection signal="timeout" from="Order_TImer/Timer" to="Order_TImer" method="_on_timer_timeout"]
+[connection signal="pressed" from="Inspect/TextureButton" to="Inspect" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="EndGame/NextLevel" to="EndGame" method="_on_next_level_pressed"]
+[connection signal="pressed" from="EndGame/BackToMainMenu" to="EndGame" method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="QuitGame/No" to="QuitGame" method="_on_no_pressed"]
+[connection signal="pressed" from="QuitGame/BackToMainMenu" to="EndGame" method="_on_back_to_main_menu_pressed"]
