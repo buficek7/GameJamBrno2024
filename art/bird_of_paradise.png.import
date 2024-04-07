@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlgq4or5m41d"
-path="res://.godot/imported/bird_of_paradise.png-7cf8e46feaac069016a9a5b687f8cd35.ctex"
+uid="uid://cdeo4dnpmdjg1"
+path="res://.godot/imported/bird_of_Paradise.png-123497153664ab077115690b3990aece.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bird_of_paradise.png"
-dest_files=["res://.godot/imported/bird_of_paradise.png-7cf8e46feaac069016a9a5b687f8cd35.ctex"]
+source_file="res://art/bird_of_Paradise.png"
+dest_files=["res://.godot/imported/bird_of_Paradise.png-123497153664ab077115690b3990aece.ctex"]
 
 [params]
 
