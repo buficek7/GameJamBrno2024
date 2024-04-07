@@ -645,6 +645,7 @@ offset_bottom = 260.0
 bbcode_enabled = true
 
 [node name="NextLevel" type="TextureButton" parent="EndGame"]
+layout_mode = 0
 offset_left = 140.0
 offset_top = 370.0
 offset_right = 540.0
@@ -709,6 +710,7 @@ offset_bottom = 685.0
 color = Color(0, 0, 0, 0.901961)
 
 [node name="No" type="TextureButton" parent="QuitGame"]
+layout_mode = 0
 offset_left = 140.0
 offset_top = 370.0
 offset_right = 540.0

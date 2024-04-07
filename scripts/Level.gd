@@ -12,7 +12,7 @@ var active_order : Order
 @onready var endGamescreen = $EndGame
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
-@export var timerTime = 20
+@export var timerTime = 60
 var playing_anim = false
 var score = 0
 
@@ -75,7 +75,6 @@ func get_order():
 func get_order_descript():
 	if endGame:
 		return null
-	print(active_order)
 	if active_order == null:
 		return null
 	return active_order.get_desc()

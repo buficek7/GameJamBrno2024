@@ -25,19 +25,22 @@ func _input(event):
 	if event.is_action_pressed("Quit") and not parent.inspect.visible:
 		parent.orderTimer.change_timer()
 		quitGame.visible = true
+		return
 	if event.is_action_pressed("Quit") and parent.inspect.visible:
 		parent.inspect.change_visibility()
+		return
 	if event.is_action_pressed("Inspect"):
 		parent.inspect.change_visibility()
+		return
 	if event.is_action_pressed("Serve"):
 		if ingEmpty():
 			return
 		dish_ready()
 		return
-	if event.is_action("Shake"):
+	if event.is_action_pressed("Shake"):
 		addIngredient("shaken")
 		return
-	if event.is_action("Reset"):
+	if event.is_action_pressed("Reset"):
 		ingredients.clear()
 		return
 
@@ -55,8 +58,6 @@ func addIngredient(ingredient):
 		anim.play("Shake")
 	else:
 		anim.play("Ing_Added")
-	print_debug("Added ingridient")
-	print_debug(ingredient)
 	ingredients[ingredient] = ingredients.get(ingredient, 0) + 1
 
 func dish_ready():
@@ -64,9 +65,7 @@ func dish_ready():
 	var recipe_ing: Dictionary = Recipes.get_recipe(recipe.get_name())
 	#should check and implement losing function
 	if !check_recipe(recipe_ing, ingredients):
-		print_debug(recipe_ing)
-		print_debug(ingredients)
-		print_debug("Lose")
+		print_debug("Not good")
 		parent.change_score(-2)
 	else:
 		print_debug("You did it")
@@ -79,8 +78,10 @@ func check_recipe(recipe: Dictionary, ingredients_sec: Dictionary):
 	if len(recipe) != len(ingredients_sec):
 		return false
 	for value in ingredients_sec.keys():
-		print_debug("check_recipe")
-		var ingredient = recipe.get(value, null)
-		if ingredient == null or ingredients_sec[value] != ingredient:
+		print_debug(value)
+		print(ingredients_sec.get(value, null))
+		print(recipe[value])
+		var ingredient = ingredients_sec.get(value, null)
+		if ingredient == null or recipe[value] != ingredient:
 			return false
 	return true
