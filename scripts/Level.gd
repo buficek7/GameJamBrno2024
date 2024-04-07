@@ -12,6 +12,7 @@ var active_order : Order
 @export var filename : String = "res://data/levels/level%d.json"
 @export var level: int = 1
 @export var timerTime = 60
+@onready var global_score : GlScore = get_node("/root/Score")
 var playing_anim = false
 var score = 0
 
@@ -51,6 +52,7 @@ func next_order():
 		active_order = null
 		orderTimer.stop_timer()
 		endGamescreen.visible = true
+		global_score.gl_score += score
 		endGamescreen.set_score(score)
 		return
 	orderTimer.stop_timer()
