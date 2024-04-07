@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cue2ng4iwyfn5"]
+[gd_scene load_steps=12 format=3 uid="uid://cue2ng4iwyfn5"]
 
 [ext_resource type="Script" path="res://scripts/end_cult.gd" id="1_d6rkn"]
 [ext_resource type="Script" path="res://scripts/IngDesc.gd" id="2_gxpjx"]
 [ext_resource type="Script" path="res://scripts/ending.gd" id="3_0hjof"]
+[ext_resource type="AudioStream" uid="uid://ccwvyu5mqmoap" path="res://Audio/WOMAN SCREAMING SOUND EFFECT.mp3" id="4_y0xi1"]
 
 [sub_resource type="Gradient" id="Gradient_k6oq8"]
 colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
@@ -33,13 +34,20 @@ font_size = 86
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 6.0
-offset_top = 801.0
-offset_right = 1913.0
-offset_bottom = 1076.0
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -25.0
+offset_top = -1.0
+offset_right = 2017.0
+offset_bottom = 1121.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2"]
+offset_left = 59.0
+offset_top = 826.0
+offset_right = 1966.0
+offset_bottom = 1101.0
 bbcode_enabled = true
-text = "[center][font_size=40]The time has come to choose the next leader of the cult[/font_size][/center]"
+text = "[center][font_size=60]The time has come to choose the next leader of the cult[/font_size][/center]"
 
 [node name="Diane" type="Area2D" parent="."]
 position = Vector2(286, 390)
@@ -55,7 +63,7 @@ offset_left = -43.0
 offset_top = 100.0
 offset_right = 78.0
 offset_bottom = 140.0
-color = Color(0, 0, 0, 0.541176)
+color = Color(0, 0, 0, 0)
 script = ExtResource("2_gxpjx")
 
 [node name="Label" type="Label" parent="Diane/IngDesc"]
@@ -109,5 +117,9 @@ text = "Quit"
 label_settings = SubResource("LabelSettings_xcwif")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="woman" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y0xi1")
+volume_db = -20.613
 
 [connection signal="pressed" from="ColorRect/Quit" to="Diane" method="_on_quit_pressed"]
