@@ -67,10 +67,15 @@ func dish_ready():
 	#should check and implement losing function
 	if !check_recipe(recipe_ing, ingredients):
 		done_drink.change_picture("fail")
-		parent.change_score(-2)
+		parent.change_score(-10)
 	else:
 		done_drink.change_picture(recipe.get_name())
-		parent.change_score(10)
+		var bonus = parent.orderTimer.get_time_left()
+		if parent.orderTimer.get_time_left() < 30:
+			bonus = bonus * 2
+		bonus = round(bonus)
+		print(10 + bonus)
+		parent.change_score(10 + bonus)
 	parent.next_order()
 	ingredients.clear()
 	

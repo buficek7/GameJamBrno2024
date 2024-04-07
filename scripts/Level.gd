@@ -83,5 +83,5 @@ func _on_order_t_imer_time_out():
 	if endGame:
 		return
 	drinkDish.clearIngredients()
-	change_score(-1)
+	change_score(-5)
 	next_order()

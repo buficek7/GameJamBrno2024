@@ -28,3 +28,6 @@ func stop_timer():
 
 func _on_timer_timeout():
 	TimeOut.emit()
+	
+func get_time_left():
+	return _Timer.time_left
