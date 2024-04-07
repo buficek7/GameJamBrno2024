@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=58 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
 [ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
 [ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
+[ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="27_12pwm"]
+[ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="28_xjma1"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
 colors = PackedColorArray(0.233781, 0.569621, 0.574711, 1, 0.54902, 1, 0.745098, 1)
@@ -260,6 +262,74 @@ height = 150
 
 [sub_resource type="LabelSettings" id="LabelSettings_owrse"]
 font_size = 120
+
+[sub_resource type="Animation" id="Animation_cxie2"]
+resource_name = "Fail"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8cqvw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../pass:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wuup3"]
+resource_name = "Pass"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../pass:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_15e6p"]
+_data = {
+"Fail": SubResource("Animation_cxie2"),
+"Pass": SubResource("Animation_wuup3"),
+"RESET": SubResource("Animation_8cqvw")
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
@@ -981,6 +1051,27 @@ label_settings = SubResource("LabelSettings_owrse")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="PassFailIndicator" type="Node2D" parent="."]
+
+[node name="fail" type="Sprite2D" parent="PassFailIndicator"]
+visible = false
+position = Vector2(-3.8147e-05, 2.86102e-06)
+scale = Vector2(3, 2.7)
+texture = ExtResource("27_12pwm")
+
+[node name="pass" type="Sprite2D" parent="PassFailIndicator"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-3.8147e-05, 2.86102e-06)
+scale = Vector2(3, 2.7)
+texture = ExtResource("28_xjma1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PassFailIndicator"]
+root_node = NodePath("../fail")
+libraries = {
+"": SubResource("AnimationLibrary_15e6p")
+}
 
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
