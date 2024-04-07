@@ -531,6 +531,12 @@ position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
 texture = ExtResource("21_755hg")
 
+[node name="DoneDrink" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-198, 182)
+texture = ExtResource("25_ror2l")
+script = ExtResource("26_xk06i")
+
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_direction = 1
 anchors_preset = 8
@@ -760,12 +766,6 @@ label_settings = SubResource("LabelSettings_owrse")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="DoneDrink" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-198, 182)
-texture = ExtResource("25_ror2l")
-script = ExtResource("26_xk06i")
 
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
