@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
 [ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
 [ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
-[ext_resource type="Texture2D" uid="uid://cgirdaa852uox" path="res://art/fail.png" id="25_ror2l"]
+[ext_resource type="Texture2D" uid="uid://bd2illvaa1twi" path="res://art/fail.png" id="25_ror2l"]
 [ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
 
 [sub_resource type="Gradient" id="Gradient_msppg"]
