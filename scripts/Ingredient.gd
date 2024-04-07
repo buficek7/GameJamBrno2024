@@ -6,6 +6,7 @@ var IsDraged : bool = false
 var OverDish : bool = false
 @onready var Sprite = $Sprite2D
 @onready var parent = $"../../Node2D"
+@onready var ingLabel : IngLabel = $"IngLabel"
 @export_category("Base")
 @export var Ingredient_Name : String
 @export var drinkDish : Dish
@@ -38,7 +39,13 @@ func _input(event):
 		drinkDish.addIngredient(Ingredient_Name)
 
 func _mouse_enter():
+	if parent.playing_anim or parent.endGame:
+		return
+	ingLabel.show_text(name.to_upper())
 	mouse_hover = true
 
 func _mouse_exit():
+	if parent.playing_anim or parent.endGame:
+		return
+	ingLabel.unshow()
 	mouse_hover = false
