@@ -7,7 +7,7 @@ func _ready():
 	if screenSize == Vector2i(1920, 1080):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else: if get_aspect_ratio(screenSize.x, screenSize.y) == Vector2i(16, 9):
-		print_debug("Wrong resolution, but right aspect")
+		print_debug("Wrong resolution, but right aspect ratio")
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		var Ratio : float = float(screenSize.x) / 1920
 		get_tree().root.content_scale_factor = Ratio
