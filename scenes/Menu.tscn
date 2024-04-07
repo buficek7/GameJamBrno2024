@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://daga12myqglgb"]
+[gd_scene load_steps=15 format=3 uid="uid://daga12myqglgb"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1vsp1"]
 [ext_resource type="Texture2D" uid="uid://c5ab5vkk6kr4p" path="res://art/menu.png" id="2_30iri"]
+[ext_resource type="AudioStream" uid="uid://c3lxp7yhkal6h" path="res://Audio/Beethoven_Fur_Elise.mp3" id="3_txtj6"]
 
 [sub_resource type="Gradient" id="Gradient_xa0b1"]
 colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
@@ -121,6 +122,10 @@ text = "Quit"
 label_settings = SubResource("LabelSettings_vsnv0")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_txtj6")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Autori" to="." method="_on_autori_pressed"]

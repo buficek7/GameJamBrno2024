@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=72 format=3 uid="uid://hdgufxll8hue"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_hk3r3"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_vjjeu"]
@@ -32,6 +32,8 @@
 [ext_resource type="Script" path="res://scripts/QuitGame.gd" id="30_4t6s3"]
 [ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="31_pkrxy"]
 [ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="32_70o01"]
+[ext_resource type="AudioStream" uid="uid://b7rda0qfljr0i" path="res://Audio/Background_Music_for_Podcast_While_Talking_no_copyright.mp3" id="33_74sy4"]
+[ext_resource type="AudioStream" uid="uid://bc7mh3fy2c16w" path="res://Audio/Sound_Effect_Crowd_Talking_outside.mp3" id="34_gwskm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 152.323)
@@ -1199,6 +1201,15 @@ root_node = NodePath("../fail")
 libraries = {
 "": SubResource("AnimationLibrary_15e6p")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_74sy4")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_gwskm")
+volume_db = -14.62
+autoplay = true
 
 [connection signal="pressed" from="Book/Forward" to="Book" method="_on_forward_pressed"]
 [connection signal="pressed" from="Book/Backward" to="Book" method="_on_backward_pressed"]
