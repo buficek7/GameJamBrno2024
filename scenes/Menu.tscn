@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://daga12myqglgb"]
+[gd_scene load_steps=6 format=3 uid="uid://daga12myqglgb"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1vsp1"]
+[ext_resource type="Texture2D" uid="uid://c5ab5vkk6kr4p" path="res://art/menu.png" id="2_30iri"]
 
 [sub_resource type="Gradient" id="Gradient_xa0b1"]
-colors = PackedColorArray(0.403264, 0.588348, 0.99277, 1, 0.229776, 0.448382, 0.980078, 1)
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.371952, 0.473018, 0.805014, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ov3yr"]
 gradient = SubResource("Gradient_xa0b1")
@@ -22,12 +23,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1vsp1")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_30iri")
+
 [node name="Start" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 117.0
-offset_right = 685.0
-offset_bottom = 267.0
+offset_left = 1187.0
+offset_top = 106.0
+offset_right = 1806.0
+offset_bottom = 256.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
 
 [node name="Label" type="Label" parent="Start"]
@@ -41,10 +48,10 @@ vertical_alignment = 1
 
 [node name="Autori" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 320.0
-offset_right = 691.0
-offset_bottom = 470.0
+offset_left = 1187.0
+offset_top = 309.0
+offset_right = 1806.0
+offset_bottom = 459.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
 
 [node name="Label" type="Label" parent="Autori"]
@@ -58,10 +65,10 @@ vertical_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 524.0
-offset_right = 691.0
-offset_bottom = 674.0
+offset_left = 1187.0
+offset_top = 513.0
+offset_right = 1806.0
+offset_bottom = 663.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
 
 [node name="Label" type="Label" parent="Quit"]
