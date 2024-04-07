@@ -1,18 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://daga12myqglgb"]
+[gd_scene load_steps=14 format=3 uid="uid://daga12myqglgb"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1vsp1"]
 [ext_resource type="Texture2D" uid="uid://c5ab5vkk6kr4p" path="res://art/menu.png" id="2_30iri"]
 
 [sub_resource type="Gradient" id="Gradient_xa0b1"]
-colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.371952, 0.473018, 0.805014, 1)
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ov3yr"]
 gradient = SubResource("Gradient_xa0b1")
 width = 619
 height = 149
 
+[sub_resource type="Gradient" id="Gradient_543vi"]
+colors = PackedColorArray(0.421498, 0.0578239, 0.0291199, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qxkm2"]
+gradient = SubResource("Gradient_543vi")
+width = 619
+height = 149
+
+[sub_resource type="Gradient" id="Gradient_24r04"]
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgiw6"]
+gradient = SubResource("Gradient_24r04")
+width = 619
+height = 149
+
 [sub_resource type="LabelSettings" id="LabelSettings_vsnv0"]
 font_size = 86
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjovd"]
+gradient = SubResource("Gradient_543vi")
+width = 619
+height = 149
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hrdmv"]
+gradient = SubResource("Gradient_24r04")
+width = 619
+height = 149
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_05lxb"]
+gradient = SubResource("Gradient_543vi")
+width = 619
+height = 149
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hmfwg"]
+gradient = SubResource("Gradient_24r04")
+width = 619
+height = 149
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -36,6 +72,8 @@ offset_top = 106.0
 offset_right = 1806.0
 offset_bottom = 256.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
+texture_pressed = SubResource("GradientTexture2D_qxkm2")
+texture_hover = SubResource("GradientTexture2D_cgiw6")
 
 [node name="Label" type="Label" parent="Start"]
 layout_mode = 0
@@ -53,6 +91,8 @@ offset_top = 309.0
 offset_right = 1806.0
 offset_bottom = 459.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
+texture_pressed = SubResource("GradientTexture2D_kjovd")
+texture_hover = SubResource("GradientTexture2D_hrdmv")
 
 [node name="Label" type="Label" parent="Autori"]
 layout_mode = 0
@@ -70,6 +110,8 @@ offset_top = 513.0
 offset_right = 1806.0
 offset_bottom = 663.0
 texture_normal = SubResource("GradientTexture2D_ov3yr")
+texture_pressed = SubResource("GradientTexture2D_05lxb")
+texture_hover = SubResource("GradientTexture2D_hmfwg")
 
 [node name="Label" type="Label" parent="Quit"]
 layout_mode = 0
