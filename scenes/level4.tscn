@@ -1,9 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://cue2ng4iwyfn5"]
+[gd_scene load_steps=18 format=3 uid="uid://cue2ng4iwyfn5"]
 
 [ext_resource type="Script" path="res://scripts/end_cult.gd" id="1_d6rkn"]
+[ext_resource type="Texture2D" uid="uid://dlg5o5ayvdr7o" path="res://art/yellow_mask.png" id="2_a0oct"]
 [ext_resource type="Script" path="res://scripts/IngDesc.gd" id="2_gxpjx"]
 [ext_resource type="Script" path="res://scripts/ending.gd" id="3_0hjof"]
+[ext_resource type="Texture2D" uid="uid://brsqo4fn2s64a" path="res://art/blue_mask.png" id="4_vg4lx"]
 [ext_resource type="AudioStream" uid="uid://ccwvyu5mqmoap" path="res://Audio/WOMAN SCREAMING SOUND EFFECT.mp3" id="4_y0xi1"]
+[ext_resource type="Texture2D" uid="uid://cpuu3d1iv5x3i" path="res://art/pink_mask.png" id="5_67je5"]
+
+[sub_resource type="Gradient" id="Gradient_iaqok"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_he2y1"]
+gradient = SubResource("Gradient_iaqok")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jvque"]
+radius = 211.0
+height = 526.0
 
 [sub_resource type="Gradient" id="Gradient_k6oq8"]
 colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
@@ -34,40 +47,98 @@ font_size = 86
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = -25.0
-offset_top = -1.0
-offset_right = 2017.0
-offset_bottom = 1121.0
-color = Color(0, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(976.5, 581.5)
+scale = Vector2(31.5156, 19.1719)
+texture = SubResource("GradientTexture2D_he2y1")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 826.0
-offset_right = 1966.0
-offset_bottom = 1101.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 120.0
+offset_top = 807.0
+offset_right = 1862.0
+offset_bottom = 1056.0
 bbcode_enabled = true
 text = "[center][font_size=60]The time has come to choose the next leader of the cult[/font_size][/center]"
 
 [node name="Diane" type="Area2D" parent="."]
-position = Vector2(286, 390)
+position = Vector2(949, 479)
 script = ExtResource("1_d6rkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Diane"]
+position = Vector2(-8, -5)
+shape = SubResource("CapsuleShape2D_jvque")
 
 [node name="Sprite2D" type="Sprite2D" parent="Diane"]
+texture = ExtResource("2_a0oct")
 
 [node name="IngDesc" type="ColorRect" parent="Diane"]
 visible = false
-offset_left = -43.0
-offset_top = 100.0
-offset_right = 78.0
-offset_bottom = 140.0
+offset_left = -68.0
+offset_top = -313.0
+offset_right = 53.0
+offset_bottom = -273.0
 color = Color(0, 0, 0, 0)
 script = ExtResource("2_gxpjx")
 
 [node name="Label" type="Label" parent="Diane/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="Yakub" type="Area2D" parent="."]
+position = Vector2(379, 486)
+script = ExtResource("1_d6rkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Yakub"]
+position = Vector2(-8, -5)
+shape = SubResource("CapsuleShape2D_jvque")
+
+[node name="Sprite2D" type="Sprite2D" parent="Yakub"]
+texture = ExtResource("4_vg4lx")
+
+[node name="IngDesc" type="ColorRect" parent="Yakub"]
+visible = false
+offset_left = -68.0
+offset_top = -313.0
+offset_right = 53.0
+offset_bottom = -273.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("2_gxpjx")
+
+[node name="Label" type="Label" parent="Yakub/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="Alex" type="Area2D" parent="."]
+position = Vector2(1528, 479)
+script = ExtResource("1_d6rkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Alex"]
+position = Vector2(-8, -5)
+shape = SubResource("CapsuleShape2D_jvque")
+
+[node name="Sprite2D" type="Sprite2D" parent="Alex"]
+texture = ExtResource("5_67je5")
+
+[node name="IngDesc" type="ColorRect" parent="Alex"]
+visible = false
+offset_left = -68.0
+offset_top = -313.0
+offset_right = 53.0
+offset_bottom = -273.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("2_gxpjx")
+
+[node name="Label" type="Label" parent="Alex/IngDesc"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 8.0

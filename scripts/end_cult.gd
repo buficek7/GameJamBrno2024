@@ -7,15 +7,14 @@ extends Area2D
 func _input(event):
 	if event.is_action_pressed("Mouse") and mouse_hover == true:
 		endScreen.show_screen()
-		pass
 
 func _mouse_enter():
-	ingDesc.show_tex(name)
 	mouse_hover = true
+	ingDesc.show_tex(name)
 
 func _mouse_exit():
-	ingDesc.unshow_text()
 	mouse_hover = false
+	ingDesc.unshow_text()
 
 func _on_quit_pressed():
 	get_tree().quit()
