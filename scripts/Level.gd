@@ -6,7 +6,6 @@ var active_order : Order
 @onready var endGame = false
 @onready var drinkDish = $DrinkDish
 @onready var orderTimer = $Order_TImer
-@onready var scoreCount = $ScoreCount
 @onready var inspect = $Inspect
 @onready var NoteAnim = $TextureButton/AnimationPlayer
 @onready var endGamescreen = $EndGame
@@ -44,7 +43,6 @@ func change_score(value):
 		score += value
 
 func next_order():
-	scoreCount.change_text(score)
 	if endGame:
 		return
 	NoteAnim.play("Done")

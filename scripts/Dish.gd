@@ -46,7 +46,11 @@ func _input(event):
 		addIngredient("shaken")
 		return
 	if event.is_action_pressed("Reset"):
+		anim.play("Reset")
+		parent.playing_anim = true
 		ingredients.clear()
+		await get_tree().create_timer(1).timeout
+		parent.playing_anim = false
 		return
 
 func _mouse_enter():
