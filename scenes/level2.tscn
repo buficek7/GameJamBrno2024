@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://hdgufxll8hue"]
+[gd_scene load_steps=72 format=3 uid="uid://cjwooqtxhtvxe"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_hk3r3"]
 [ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_vjjeu"]
@@ -415,7 +415,8 @@ _data = {
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
 script = ExtResource("1_hk3r3")
-timerTime = 40
+level = 2
+timerTime = 30
 
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
