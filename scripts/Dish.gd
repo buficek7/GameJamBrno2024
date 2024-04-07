@@ -3,7 +3,7 @@ class_name Dish
 
 var ingredients = {} #dictionary of put ingredients
 @onready var texture = $Sprite2D
-@onready var parent = get_node("../../Node2D")
+@onready var parent = $"../../Node2D"
 @onready var quitGame = $"../QuitGame"
 @export var scaleTexture = Vector2(0.1, 0.1)
 @export var scaleTextureMax = 0.25

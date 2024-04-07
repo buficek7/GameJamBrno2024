@@ -4,12 +4,9 @@ extends Area2D
 @onready var ingDesc = $IngDesc
 @onready var endScreen : EndingScreen = $"../ColorRect"
 
-func _ready():
-	endScreen.show_screen()
-
 func _input(event):
 	if event.is_action_pressed("Mouse") and mouse_hover == true:
-		#code for ending
+		endScreen.show_screen()
 		pass
 
 func _mouse_enter():
