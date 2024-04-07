@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://cue2ng4iwyfn5"]
+
+[ext_resource type="Script" path="res://scripts/end_cult.gd" id="1_jqxrt"]
+[ext_resource type="Script" path="res://scripts/IngDesc.gd" id="2_2lh7c"]
+[ext_resource type="Script" path="res://scripts/ending.gd" id="3_vaklu"]
+
+[sub_resource type="Gradient" id="Gradient_k6oq8"]
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcjma"]
+gradient = SubResource("Gradient_k6oq8")
+width = 619
+height = 149
+
+[sub_resource type="Gradient" id="Gradient_543vi"]
+colors = PackedColorArray(0.421498, 0.0578239, 0.0291199, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4gneu"]
+gradient = SubResource("Gradient_543vi")
+width = 619
+height = 149
+
+[sub_resource type="Gradient" id="Gradient_24r04"]
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_60gvm"]
+gradient = SubResource("Gradient_24r04")
+width = 619
+height = 149
+
+[sub_resource type="LabelSettings" id="LabelSettings_xcwif"]
+font_size = 86
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 6.0
+offset_top = 801.0
+offset_right = 1913.0
+offset_bottom = 1076.0
+bbcode_enabled = true
+text = "[center][font_size=40]The time has come to choose the next leader of the cult[/font_size][/center]"
+
+[node name="Diane" type="Area2D" parent="."]
+position = Vector2(286, 390)
+script = ExtResource("1_jqxrt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diane"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Diane"]
+
+[node name="IngDesc" type="ColorRect" parent="Diane"]
+visible = false
+offset_left = -43.0
+offset_top = 100.0
+offset_right = 78.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 0.541176)
+script = ExtResource("2_2lh7c")
+
+[node name="Label" type="Label" parent="Diane/IngDesc"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "Shugar"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -27.0
+offset_right = 1937.0
+offset_bottom = 1131.0
+color = Color(0.247059, 0, 0, 1)
+script = ExtResource("3_vaklu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 484.0
+offset_top = 353.0
+offset_right = 1560.0
+offset_bottom = 689.0
+bbcode_enabled = true
+text = "[center][font_size=60]
+Thanks for playing
+Final Score: 
+[/font_size]
+[/center]"
+
+[node name="Quit" type="TextureButton" parent="ColorRect"]
+visible = false
+offset_left = 709.0
+offset_top = 752.0
+offset_right = 1328.0
+offset_bottom = 902.0
+texture_normal = SubResource("GradientTexture2D_kcjma")
+texture_pressed = SubResource("GradientTexture2D_4gneu")
+texture_hover = SubResource("GradientTexture2D_60gvm")
+
+[node name="Label" type="Label" parent="ColorRect/Quit"]
+layout_mode = 0
+offset_right = 621.0
+offset_bottom = 147.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_xcwif")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/Quit" to="Diane" method="_on_quit_pressed"]

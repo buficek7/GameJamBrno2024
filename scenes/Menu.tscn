@@ -1,21 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://daga12myqglgb"]
+[gd_scene load_steps=19 format=3 uid="uid://daga12myqglgb"]
 
 [ext_resource type="Script" path="res://scripts/Menu.gd" id="1_1vsp1"]
 [ext_resource type="Texture2D" uid="uid://c5ab5vkk6kr4p" path="res://art/menu.png" id="2_30iri"]
 [ext_resource type="AudioStream" uid="uid://c3lxp7yhkal6h" path="res://Audio/Beethoven_Fur_Elise.mp3" id="3_txtj6"]
 
-[sub_resource type="Gradient" id="Gradient_xa0b1"]
+[sub_resource type="Gradient" id="Gradient_jt8y6"]
 colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.372549, 0.47451, 0.803922, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ov3yr"]
-gradient = SubResource("Gradient_xa0b1")
+gradient = SubResource("Gradient_jt8y6")
 width = 619
 height = 149
+
+[sub_resource type="Gradient" id="Gradient_53rh5"]
+colors = PackedColorArray(0.421498, 0.0578239, 0.0291199, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qxkm2"]
+gradient = SubResource("Gradient_53rh5")
+width = 619
+height = 149
+
+[sub_resource type="Gradient" id="Gradient_888f5"]
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.172549, 0.239216, 0.486275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgiw6"]
+gradient = SubResource("Gradient_888f5")
+width = 619
+height = 149
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsnv0"]
+font_size = 86
 
 [sub_resource type="Gradient" id="Gradient_543vi"]
 colors = PackedColorArray(0.421498, 0.0578239, 0.0291199, 1, 0.172549, 0.239216, 0.486275, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_qxkm2"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjovd"]
 gradient = SubResource("Gradient_543vi")
 width = 619
 height = 149
@@ -23,31 +42,24 @@ height = 149
 [sub_resource type="Gradient" id="Gradient_24r04"]
 colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.172549, 0.239216, 0.486275, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgiw6"]
-gradient = SubResource("Gradient_24r04")
-width = 619
-height = 149
-
-[sub_resource type="LabelSettings" id="LabelSettings_vsnv0"]
-font_size = 86
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjovd"]
-gradient = SubResource("Gradient_543vi")
-width = 619
-height = 149
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hrdmv"]
 gradient = SubResource("Gradient_24r04")
 width = 619
 height = 149
 
+[sub_resource type="Gradient" id="Gradient_kgscp"]
+colors = PackedColorArray(0.421498, 0.0578239, 0.0291199, 1, 0.172549, 0.239216, 0.486275, 1)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_05lxb"]
-gradient = SubResource("Gradient_543vi")
+gradient = SubResource("Gradient_kgscp")
 width = 619
 height = 149
 
+[sub_resource type="Gradient" id="Gradient_qaeup"]
+colors = PackedColorArray(0.639216, 0.109804, 0.0666667, 1, 0.172549, 0.239216, 0.486275, 1)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hmfwg"]
-gradient = SubResource("Gradient_24r04")
+gradient = SubResource("Gradient_qaeup")
 width = 619
 height = 149
 
