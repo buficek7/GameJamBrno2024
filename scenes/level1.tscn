@@ -1,37 +1,37 @@
 [gd_scene load_steps=61 format=3 uid="uid://hdgufxll8hue"]
 
-[ext_resource type="Script" path="res://scripts/Ingredient.gd" id="1_nhgtr"]
-[ext_resource type="Script" path="res://scripts/Level.gd" id="1_s5lyr"]
-[ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_wx44w"]
-[ext_resource type="Texture2D" uid="uid://cq2urnxjratlr" path="res://art/book.png" id="3_7i6x0"]
-[ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="3_8e27k"]
-[ext_resource type="Script" path="res://scripts/Dish.gd" id="3_droxh"]
-[ext_resource type="Texture2D" uid="uid://b0sb1mm2pou03" path="res://art/book_button.png" id="4_judit"]
-[ext_resource type="Texture2D" uid="uid://cjord76xge0ip" path="res://art/book_button_press.png" id="5_g02ba"]
-[ext_resource type="Texture2D" uid="uid://b4vtxexoohcuy" path="res://art/note_special.png" id="5_tsyfh"]
-[ext_resource type="Texture2D" uid="uid://qy0e3e3gf5iy" path="res://art/background.png" id="6_m1xq3"]
-[ext_resource type="Texture2D" uid="uid://d24waypxedghc" path="res://art/book_button_hover.png" id="6_ob8q1"]
-[ext_resource type="Texture2D" uid="uid://dgltlj6l10yh3" path="res://art/shaker.png" id="8_n7exs"]
-[ext_resource type="Script" path="res://scripts/Inscpection.gd" id="10_7w07t"]
-[ext_resource type="Texture2D" uid="uid://btwh6i8p4fw01" path="res://art/cherry.png" id="10_352m3"]
-[ext_resource type="Texture2D" uid="uid://cedkrlaakto4j" path="res://art/herbal.png" id="11_m1vkb"]
-[ext_resource type="Texture2D" uid="uid://ch1mndmlgtfp4" path="res://art/vanilla.png" id="12_b5asy"]
-[ext_resource type="Texture2D" uid="uid://caum3bfctoowk" path="res://art/basil.png" id="13_flgw5"]
-[ext_resource type="Texture2D" uid="uid://b8r0jw4i50byg" path="res://art/tequilla.png" id="14_6d8x1"]
-[ext_resource type="Texture2D" uid="uid://dhr6qm5gab6vo" path="res://art/rum.png" id="15_befe1"]
-[ext_resource type="Texture2D" uid="uid://dj2fqe6d21xas" path="res://art/vodka.png" id="16_l20wa"]
-[ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="17_e4fuw"]
-[ext_resource type="Texture2D" uid="uid://bgogmi77ky082" path="res://art/ice.png" id="17_tjfr1"]
-[ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="18_ccxdd"]
-[ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="19_j3xmy"]
-[ext_resource type="Script" path="res://scripts/IngDesc.gd" id="20_1fjtv"]
-[ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="20_tuyn0"]
-[ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="21_755hg"]
-[ext_resource type="Script" path="res://scripts/EndGame.gd" id="23_u0dfi"]
-[ext_resource type="Script" path="res://scripts/QuitGame.gd" id="24_86rip"]
-[ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="26_xk06i"]
-[ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="27_12pwm"]
-[ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="28_xjma1"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_hk3r3"]
+[ext_resource type="Script" path="res://scripts/RecipeBook.gd" id="2_vjjeu"]
+[ext_resource type="Texture2D" uid="uid://cq2urnxjratlr" path="res://art/book.png" id="3_r8jbk"]
+[ext_resource type="Texture2D" uid="uid://b0sb1mm2pou03" path="res://art/book_button.png" id="4_6muu4"]
+[ext_resource type="Texture2D" uid="uid://cjord76xge0ip" path="res://art/book_button_press.png" id="5_60t7n"]
+[ext_resource type="Texture2D" uid="uid://d24waypxedghc" path="res://art/book_button_hover.png" id="6_6kanf"]
+[ext_resource type="Texture2D" uid="uid://qy0e3e3gf5iy" path="res://art/background.png" id="7_qpy6v"]
+[ext_resource type="Script" path="res://scripts/Dish.gd" id="8_xicgc"]
+[ext_resource type="Texture2D" uid="uid://dgltlj6l10yh3" path="res://art/shaker.png" id="9_mlp8j"]
+[ext_resource type="Script" path="res://scripts/Ingredient.gd" id="10_gj7hb"]
+[ext_resource type="Texture2D" uid="uid://btwh6i8p4fw01" path="res://art/cherry.png" id="11_kcipm"]
+[ext_resource type="Script" path="res://scripts/IngDesc.gd" id="12_mytcj"]
+[ext_resource type="Texture2D" uid="uid://cedkrlaakto4j" path="res://art/herbal.png" id="13_rmcbt"]
+[ext_resource type="Texture2D" uid="uid://ch1mndmlgtfp4" path="res://art/vanilla.png" id="14_3xfjl"]
+[ext_resource type="Texture2D" uid="uid://caum3bfctoowk" path="res://art/basil.png" id="15_hlqqm"]
+[ext_resource type="Texture2D" uid="uid://b8r0jw4i50byg" path="res://art/tequilla.png" id="16_a8cnv"]
+[ext_resource type="Texture2D" uid="uid://dhr6qm5gab6vo" path="res://art/rum.png" id="17_c0ywp"]
+[ext_resource type="Texture2D" uid="uid://dj2fqe6d21xas" path="res://art/vodka.png" id="18_c7yun"]
+[ext_resource type="Texture2D" uid="uid://bgogmi77ky082" path="res://art/ice.png" id="19_q171c"]
+[ext_resource type="Texture2D" uid="uid://bo70ixivdaur0" path="res://art/citrus.png" id="20_5cf68"]
+[ext_resource type="Texture2D" uid="uid://c4gtg38ms3rbs" path="res://art/berries.png" id="21_a0nv2"]
+[ext_resource type="Texture2D" uid="uid://do6j1q7ulefpw" path="res://art/lavender.png" id="22_wfx2h"]
+[ext_resource type="Texture2D" uid="uid://dvaknc3oqk50" path="res://art/honey.png" id="23_st2hb"]
+[ext_resource type="Texture2D" uid="uid://bi1rds8aiir2" path="res://art/shugar.png" id="24_kwvo2"]
+[ext_resource type="Script" path="res://scripts/DoneDrink.gd" id="25_fk2om"]
+[ext_resource type="Texture2D" uid="uid://b4vtxexoohcuy" path="res://art/note_special.png" id="26_w4v8e"]
+[ext_resource type="Script" path="res://scripts/Order_Timer.gd" id="27_ntrxl"]
+[ext_resource type="Script" path="res://scripts/Inscpection.gd" id="28_3tg4a"]
+[ext_resource type="Script" path="res://scripts/EndGame.gd" id="29_qydnk"]
+[ext_resource type="Script" path="res://scripts/QuitGame.gd" id="30_4t6s3"]
+[ext_resource type="Texture2D" uid="uid://dbmx1jvby6i5l" path="res://Textures/Screen_Blur_fail.png" id="31_pkrxy"]
+[ext_resource type="Texture2D" uid="uid://cf064k8s0b64h" path="res://Textures/Screen_Blur_pass.png" id="32_70o01"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm5ap"]
 size = Vector2(70, 152.323)
@@ -373,7 +373,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(2, -1)
-script = ExtResource("1_s5lyr")
+script = ExtResource("1_hk3r3")
 
 [node name="Book" type="Control" parent="."]
 layout_mode = 3
@@ -387,7 +387,7 @@ offset_bottom = 536.0
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 0
-script = ExtResource("2_wx44w")
+script = ExtResource("2_vjjeu")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Book"]
@@ -401,7 +401,7 @@ offset_left = -0.278015
 offset_top = -2.824
 offset_right = -4.0
 offset_bottom = 4.0
-texture = ExtResource("3_7i6x0")
+texture = ExtResource("3_r8jbk")
 
 [node name="Forward" type="TextureButton" parent="Book"]
 layout_mode = 1
@@ -414,9 +414,9 @@ offset_top = 234.0
 offset_right = 535.552
 offset_bottom = 247.334
 scale = Vector2(0.125, 0.125)
-texture_normal = ExtResource("4_judit")
-texture_pressed = ExtResource("5_g02ba")
-texture_hover = ExtResource("6_ob8q1")
+texture_normal = ExtResource("4_6muu4")
+texture_pressed = ExtResource("5_60t7n")
+texture_hover = ExtResource("6_6kanf")
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
@@ -432,9 +432,9 @@ offset_top = 234.0
 offset_right = -61.448
 offset_bottom = 247.334
 scale = Vector2(0.125, 0.125)
-texture_normal = ExtResource("4_judit")
-texture_pressed = ExtResource("5_g02ba")
-texture_hover = ExtResource("6_ob8q1")
+texture_normal = ExtResource("4_6muu4")
+texture_pressed = ExtResource("5_60t7n")
+texture_hover = ExtResource("6_6kanf")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Book"]
@@ -466,12 +466,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(2.00004, -0.999965)
 scale = Vector2(1.11111, 1.11111)
-texture = ExtResource("6_m1xq3")
+texture = ExtResource("7_qpy6v")
 
 [node name="DrinkDish" type="Area2D" parent="."]
 position = Vector2(301, 249)
 scale = Vector2(3.11793, 2.15332)
-script = ExtResource("3_droxh")
+script = ExtResource("8_xicgc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkDish"]
 position = Vector2(0, -4.1796)
@@ -479,7 +479,7 @@ shape = SubResource("RectangleShape2D_hm5ap")
 
 [node name="Sprite2D" type="Sprite2D" parent="DrinkDish"]
 scale = Vector2(0.33, 0.515)
-texture = ExtResource("8_n7exs")
+texture = ExtResource("9_mlp8j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DrinkDish"]
 libraries = {
@@ -488,7 +488,7 @@ libraries = {
 
 [node name="cherry" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-760, -426)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cherry"]
@@ -498,7 +498,7 @@ shape = SubResource("CapsuleShape2D_glpd3")
 [node name="Sprite2D" type="Sprite2D" parent="cherry"]
 position = Vector2(71, 0)
 scale = Vector2(0.975, 0.975)
-texture = ExtResource("10_352m3")
+texture = ExtResource("11_kcipm")
 
 [node name="IngDesc" type="ColorRect" parent="cherry"]
 visible = false
@@ -507,7 +507,7 @@ offset_top = 76.0
 offset_right = 62.0
 offset_bottom = 116.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="cherry/IngDesc"]
 layout_mode = 0
@@ -520,7 +520,7 @@ horizontal_alignment = 1
 
 [node name="herbal" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-528, -420)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="herbal"]
@@ -530,7 +530,7 @@ shape = SubResource("CapsuleShape2D_glpd3")
 [node name="Sprite2D" type="Sprite2D" parent="herbal"]
 position = Vector2(-98, -22)
 scale = Vector2(0.975, 0.975)
-texture = ExtResource("11_m1vkb")
+texture = ExtResource("13_rmcbt")
 
 [node name="IngDesc" type="ColorRect" parent="herbal"]
 visible = false
@@ -539,7 +539,7 @@ offset_top = 75.0
 offset_right = 61.0
 offset_bottom = 115.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="herbal/IngDesc"]
 layout_mode = 0
@@ -552,7 +552,7 @@ horizontal_alignment = 1
 
 [node name="vanilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-280, -416)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vanilla"]
@@ -562,7 +562,7 @@ shape = SubResource("CapsuleShape2D_glpd3")
 [node name="Sprite2D" type="Sprite2D" parent="vanilla"]
 position = Vector2(-1.99999, -21)
 scale = Vector2(0.975, 0.975)
-texture = ExtResource("12_b5asy")
+texture = ExtResource("14_3xfjl")
 
 [node name="IngDesc" type="ColorRect" parent="vanilla"]
 visible = false
@@ -571,7 +571,7 @@ offset_top = 74.0
 offset_right = 61.0
 offset_bottom = 114.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="vanilla/IngDesc"]
 layout_mode = 0
@@ -584,7 +584,7 @@ horizontal_alignment = 1
 
 [node name="basil" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-47, -401)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="basil"]
@@ -594,7 +594,7 @@ shape = SubResource("CapsuleShape2D_7k6t1")
 [node name="Sprite2D" type="Sprite2D" parent="basil"]
 position = Vector2(-1.99999, -21)
 scale = Vector2(0.975, 0.975)
-texture = ExtResource("13_flgw5")
+texture = ExtResource("15_hlqqm")
 
 [node name="IngDesc" type="ColorRect" parent="basil"]
 visible = false
@@ -603,7 +603,7 @@ offset_top = 62.0
 offset_right = 51.0
 offset_bottom = 102.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="basil/IngDesc"]
 layout_mode = 0
@@ -616,7 +616,7 @@ horizontal_alignment = 1
 
 [node name="tequilla" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-672, -134)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tequilla"]
@@ -626,7 +626,7 @@ shape = SubResource("CapsuleShape2D_27jwi")
 [node name="Sprite2D" type="Sprite2D" parent="tequilla"]
 position = Vector2(-26, -147)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("14_6d8x1")
+texture = ExtResource("16_a8cnv")
 
 [node name="IngDesc" type="ColorRect" parent="tequilla"]
 visible = false
@@ -635,7 +635,7 @@ offset_top = 85.0
 offset_right = 61.0
 offset_bottom = 125.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="tequilla/IngDesc"]
 layout_mode = 0
@@ -648,7 +648,7 @@ horizontal_alignment = 1
 
 [node name="rum" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-399, -128)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rum"]
@@ -658,7 +658,7 @@ shape = SubResource("CapsuleShape2D_27jwi")
 [node name="Sprite2D" type="Sprite2D" parent="rum"]
 position = Vector2(-3, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("15_befe1")
+texture = ExtResource("17_c0ywp")
 
 [node name="IngDesc" type="ColorRect" parent="rum"]
 visible = false
@@ -667,7 +667,7 @@ offset_top = 84.0
 offset_right = 60.0
 offset_bottom = 124.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="rum/IngDesc"]
 layout_mode = 0
@@ -680,7 +680,7 @@ horizontal_alignment = 1
 
 [node name="vodka" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-106, -123)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vodka"]
@@ -690,7 +690,7 @@ shape = SubResource("CapsuleShape2D_27jwi")
 [node name="Sprite2D" type="Sprite2D" parent="vodka"]
 position = Vector2(-3, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("16_l20wa")
+texture = ExtResource("18_c7yun")
 
 [node name="IngDesc" type="ColorRect" parent="vodka"]
 visible = false
@@ -699,7 +699,7 @@ offset_top = 84.0
 offset_right = 62.0
 offset_bottom = 124.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="vodka/IngDesc"]
 layout_mode = 0
@@ -712,7 +712,7 @@ horizontal_alignment = 1
 
 [node name="ice" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-749, 196)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ice"]
@@ -722,7 +722,7 @@ shape = SubResource("CapsuleShape2D_kq1rc")
 [node name="Sprite2D" type="Sprite2D" parent="ice"]
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("17_tjfr1")
+texture = ExtResource("19_q171c")
 
 [node name="IngDesc" type="ColorRect" parent="ice"]
 visible = false
@@ -731,7 +731,7 @@ offset_top = 53.0
 offset_right = 73.0
 offset_bottom = 93.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="ice/IngDesc"]
 layout_mode = 0
@@ -744,7 +744,7 @@ horizontal_alignment = 1
 
 [node name="citrus" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-852, 277)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="citrus"]
@@ -754,7 +754,7 @@ shape = SubResource("CapsuleShape2D_id5by")
 [node name="Sprite2D" type="Sprite2D" parent="citrus"]
 position = Vector2(-76, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("17_e4fuw")
+texture = ExtResource("20_5cf68")
 
 [node name="IngDesc" type="ColorRect" parent="citrus"]
 visible = false
@@ -763,7 +763,7 @@ offset_top = 66.0
 offset_right = 63.0
 offset_bottom = 106.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="citrus/IngDesc"]
 layout_mode = 0
@@ -776,7 +776,7 @@ horizontal_alignment = 1
 
 [node name="berries" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-627, 261)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="berries"]
@@ -786,7 +786,7 @@ shape = SubResource("CapsuleShape2D_elev6")
 [node name="Sprite2D" type="Sprite2D" parent="berries"]
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("18_ccxdd")
+texture = ExtResource("21_a0nv2")
 
 [node name="IngDesc" type="ColorRect" parent="berries"]
 visible = false
@@ -795,7 +795,7 @@ offset_top = 40.0
 offset_right = 74.0
 offset_bottom = 80.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="berries/IngDesc"]
 layout_mode = 0
@@ -808,7 +808,7 @@ horizontal_alignment = 1
 
 [node name="lavender" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-378, 146)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lavender"]
@@ -818,7 +818,7 @@ shape = SubResource("CapsuleShape2D_4digj")
 [node name="Sprite2D" type="Sprite2D" parent="lavender"]
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("19_j3xmy")
+texture = ExtResource("22_wfx2h")
 
 [node name="IngDesc" type="ColorRect" parent="lavender"]
 visible = false
@@ -827,7 +827,7 @@ offset_top = 100.0
 offset_right = 78.0
 offset_bottom = 140.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="lavender/IngDesc"]
 layout_mode = 0
@@ -840,7 +840,7 @@ horizontal_alignment = 1
 
 [node name="honey" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-258, 147)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="honey"]
@@ -850,7 +850,7 @@ shape = SubResource("CapsuleShape2D_4digj")
 [node name="Sprite2D" type="Sprite2D" parent="honey"]
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("20_tuyn0")
+texture = ExtResource("23_st2hb")
 
 [node name="IngDesc" type="ColorRect" parent="honey"]
 visible = false
@@ -859,7 +859,7 @@ offset_top = 100.0
 offset_right = 78.0
 offset_bottom = 140.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="honey/IngDesc"]
 layout_mode = 0
@@ -872,7 +872,7 @@ horizontal_alignment = 1
 
 [node name="shugar" type="Area2D" parent="." node_paths=PackedStringArray("drinkDish")]
 position = Vector2(-141, 146)
-script = ExtResource("1_nhgtr")
+script = ExtResource("10_gj7hb")
 drinkDish = NodePath("../DrinkDish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shugar"]
@@ -882,7 +882,7 @@ shape = SubResource("CapsuleShape2D_4digj")
 [node name="Sprite2D" type="Sprite2D" parent="shugar"]
 position = Vector2(14, -43)
 scale = Vector2(0.997778, 1.06444)
-texture = ExtResource("21_755hg")
+texture = ExtResource("24_kwvo2")
 
 [node name="IngDesc" type="ColorRect" parent="shugar"]
 visible = false
@@ -891,7 +891,7 @@ offset_top = 100.0
 offset_right = 78.0
 offset_bottom = 140.0
 color = Color(0, 0, 0, 0.541176)
-script = ExtResource("20_1fjtv")
+script = ExtResource("12_mytcj")
 
 [node name="Label" type="Label" parent="shugar/IngDesc"]
 layout_mode = 0
@@ -905,7 +905,7 @@ horizontal_alignment = 1
 [node name="DoneDrink" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-198, 182)
-script = ExtResource("26_xk06i")
+script = ExtResource("25_fk2om")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_direction = 1
@@ -924,7 +924,7 @@ scale = Vector2(1.585, 1.585)
 pivot_offset = Vector2(67.4203, 62.6357)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("5_tsyfh")
+texture_normal = ExtResource("26_w4v8e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TextureButton"]
 libraries = {
@@ -938,7 +938,7 @@ offset_left = -36.0
 offset_top = -80.0
 offset_right = 122.0
 offset_bottom = -40.0
-script = ExtResource("3_8e27k")
+script = ExtResource("27_ntrxl")
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="ProgressBar" parent="Order_TImer"]
@@ -964,7 +964,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("10_7w07t")
+script = ExtResource("28_3tg4a")
 
 [node name="ColorRect" type="ColorRect" parent="Inspect"]
 layout_mode = 2
@@ -1004,7 +1004,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("23_u0dfi")
+script = ExtResource("29_qydnk")
 
 [node name="ColorRect" type="ColorRect" parent="EndGame"]
 layout_mode = 2
@@ -1077,7 +1077,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("24_86rip")
+script = ExtResource("30_4t6s3")
 
 [node name="ColorRect" type="ColorRect" parent="QuitGame"]
 layout_mode = 2
@@ -1143,13 +1143,13 @@ visible = false
 [node name="fail" type="Sprite2D" parent="PassFailIndicator"]
 position = Vector2(-3.8147e-05, 2.86102e-06)
 scale = Vector2(3, 2.7)
-texture = ExtResource("27_12pwm")
+texture = ExtResource("31_pkrxy")
 
 [node name="pass" type="Sprite2D" parent="PassFailIndicator"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-3.8147e-05, 2.86102e-06)
 scale = Vector2(3, 2.7)
-texture = ExtResource("28_xjma1")
+texture = ExtResource("32_70o01")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PassFailIndicator"]
 root_node = NodePath("../fail")
