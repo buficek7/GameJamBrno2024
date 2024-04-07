@@ -10,7 +10,7 @@ func set_score(score: int):
 	
 
 func _on_next_level_pressed():
-	get_tree().change_scene_to_file(path % ("level%i" % (curr_level.level + 1)))
+	get_tree().change_scene_to_file(path % ("level%d" % (curr_level.level + 1)))
 	
 
 func _on_back_to_main_menu_pressed():
