@@ -9,6 +9,7 @@ var ingredients = {} #dictionary of put ingredients
 @export var scaleTextureMax = 0.25
 @export var scaleMax = 0.01
 @onready var anim = $AnimationPlayer
+@onready var done_drink : DoneDrink = $"../DoneDrink"
 var currentscale = scaleTexture
 var mouse_hover = false
 # Called when the node enters the scene tree for the first time.
@@ -65,22 +66,18 @@ func dish_ready():
 	var recipe_ing: Dictionary = Recipes.get_recipe(recipe.get_name())
 	#should check and implement losing function
 	if !check_recipe(recipe_ing, ingredients):
-		print_debug("Not good")
+		done_drink.change_picture("fail")
 		parent.change_score(-2)
 	else:
-		print_debug("You did it")
+		done_drink.change_picture(recipe.get_name())
 		parent.change_score(10)
 	parent.next_order()
 	ingredients.clear()
-	print_debug("dish_ready_end")
 	
 func check_recipe(recipe: Dictionary, ingredients_sec: Dictionary):
 	if len(recipe) != len(ingredients_sec):
 		return false
 	for value in ingredients_sec.keys():
-		print_debug(value)
-		print(ingredients_sec.get(value, null))
-		print(recipe[value])
 		var ingredient = ingredients_sec.get(value, null)
 		if ingredient == null or recipe[value] != ingredient:
 			return false
